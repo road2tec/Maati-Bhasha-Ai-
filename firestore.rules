@@ -1,0 +1,65 @@
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions for reusable logic
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+    
+    function isAdmin() {
+      return exists(/databases/$(database)/documents/roles_admin/$(request.auth.uid));
+    }
+
+    // Ensures a document exists before an update or delete operation.
+    function isExistingDoc() {
+      return resource != null;
+    }
+
+    match /users/{userId} {
+      // Admins can read any user profile. Regular users can only read their own.
+      allow get: if isOwner(userId) || isAdmin();
+      // Only admins can list all users.
+      allow list: if isAdmin();
+      
+      // Allow creation if the user is creating their own document.
+      // The incoming document's 'id' field MUST match the user's auth UID.
+      allow create: if isOwner(userId) && request.resource.data.id == request.auth.uid;
+      
+      // Admins can update any user's 'isBlocked' status.
+      // Regular users can only update their own profile, but cannot change their ID or blocked status.
+      allow update: if isExistingDoc() && 
+                      (isAdmin() || 
+                        (isOwner(userId) && 
+                         request.resource.data.id == resource.data.id &&
+                         request.resource.data.isBlocked == resource.data.isBlocked
+                        )
+                      );
+                      
+      // Only admins can delete user documents.
+      allow delete: if isAdmin() && isExistingDoc();
+    }
+    
+    match /roles_admin/{userId} {
+      // Admins can see who else is an admin. Users can check their own admin status.
+      allow get: if isAdmin() || isOwner(userId);
+      // Only admins can list other admins.
+      allow list: if isAdmin();
+      
+      // Admins can grant or revoke admin roles.
+      // A user can create their own role document during registration (handled by client logic)
+      allow create: if isAdmin() || isOwner(userId);
+      
+      // Admins can delete role documents to revoke admin status.
+      allow delete: if isAdmin();
+
+      // Roles are not updated, only created or deleted.
+      allow update: if false;
+    }
+  }
+}
