@@ -1,0 +1,9 @@
+{
+  "model_name": "marathi-gemini-demo",
+  "version": "0.1.0",
+  "description": "Placeholder model metadata for demo purposes only. Not used at runtime.",
+  "vocab_size": 32000,
+  "languages": ["mr"],
+  "created_by": "Studio Demo",
+  "license": "demo-only"
+}
