@@ -449,7 +449,7 @@ export default function TranslationUI() {
               </div>
               {/* Output Section */}
               <div className="relative">
-                <Label className="text-sm font-semibold text-primary absolute top-2 left-4 bg-background px-1 z-10">Translated Dialect</Label>
+                <Label className="text-sm font-semibold text-primary absolute top-2 left-4 bg-background px-1 z-10">{dialects.find(d => d.value === dialect)?.label || 'Translated Dialect'}</Label>
                 <div className="relative min-h-[250px] w-full rounded-xl border-2 border-border/70 bg-muted p-4 text-lg pt-8">
                   {isPending ? (
                     <div className="absolute inset-0 flex items-center justify-center bg-background/50 backdrop-blur-sm rounded-xl">
