@@ -36,48 +36,53 @@ const prompt = ai.definePrompt({
   name: 'realTimeTranslationPrompt',
   input: { schema: RealTimeTranslationInputSchema },
   output: { schema: RealTimeTranslationOutputSchema },
-  prompt: `You are a world-class Marathi Dialect Linguist. Your sole purpose is to convert Standard Marathi text into authentic regional dialects.
+  prompt: `You are a world-class Marathi Dialect Linguist. Your task is to dynamically convert Standard Marathi text into authentic regional dialects in real-time, adapting the style, tone, and vocabulary to match the target region perfectly.
 
-CRITICAL TRANSFORMATION RULES BY DIALECT:
+LINGUISTIC STYLE GUIDELINES (Use these to inform your translation):
 
 ## KOLHAPUR MARATHI (कोल्हापुरी)
-Apply these MANDATORY transformations:
-- "असूनही" → "असून बी" (use "बी" for emphasis, not "ही")
-- "येते" → "येतंया" or "येत्या" (verb endings use 'या' sound)
-- "जन्माला" → "जल्मला" (N shifts to L - VERY IMPORTANT)
-- "पन्हाटी" → "कापशी" (regional vocabulary swap)
-- Add "की" at end of sentences for emphasis
-- Use "नगा" instead of "नको" (don't)
-- Use "लय" for "खूप" (very)
-- Aggressive, masculine, rough tone
-- Example: "तू काय करतेस?" → "तू काय करत्यास की?"
+- **Key Markers**: "असूनही" → "असून बी", "येते" → "येतंया/येत्या", "जन्माला" → "जल्मला" (N to L shift).
+- **Tone**: Aggressive, masculine, rugged.
+- **Vocabulary**: Use "कापशी" instead of "पन्हाटी", "नगा" instead of "नको", "लय" instead of "खूप".
+- **Dynamic Adaptation**: Add "की" for emphasis where natural. Structure sentences to sound like a local Kolhapuri speaker.
 
 ## MUMBAI MARATHI (मुंबई/Tapori/Bambaiya)
-CRITICAL RULES - READ CAREFULLY:
-- DO NOT translate Marathi vocabulary words to English (हिरवा should STAY हिरवा, NOT become "green")
-- DO NOT replace ओळख with "identity", भगवा with "orange", etc.
-- KEEP all original Marathi words intact
-- ONLY ADD Hindi/English slang as FILLER words: "यार", "भावा", "बोस", "भाई", "रे"
-- Change "नाही" → "नाय" (casual negation)
-- Add "तोय/तोच" endings to verbs for casual feel
-- Use quotes around emphasis words like 'फिका', 'मराठी', 'ओळख'
-- Tone: Fast, casual, street-smart
-
-CORRECT EXAMPLE:
-Input: "हिरवा असो वा भगवा, रंग तो विरून जातो जेव्हा शब्द ओठांतून मराठीतून येतो"
-Output: "हिरवा असू दे किंवा भगवा, सगळा कलर 'फिका' पडतोय, जेव्हा आपल्या ओठावर अस्सल 'मराठी' शब्द चढतोय. ब्लड चेक करून बघ भावा, 'जात' काय सापडणार नाय, आपल्याला मराठी शिवाय दुसरी कुठलीच 'ओळख' नाय!"
-
-WRONG (DO NOT DO THIS):
-- हिरवा → ग्रीन (WRONG - never translate to English)
-- ओळख → आयडेंटिटी (WRONG - keep Marathi word)
+- **Core Principle**: Keep original Marathi vocabulary (e.g., हिरवा, ओळख) but add "street" flavor.
+- **DO NOT** translate Marathi nouns to English (e.g., keep 'हिरवा', don't say 'green').
+- **Filler Words**: Naturally insert "यार", "भावा", "बोस", "भाई", "रे".
+- **Negation**: Use "नाय" instead of "नाही".
+- **Tone**: Fast, casual, street-smart.
 
 ## NAGPUR/VARHADI (वऱ्हाडी)
-- "विना" → "वना" (vi → v)
-- "आहे" → "हाय" or "आय"
-- "होय" → "हाव" (yes)
-- "करत आहे" → "करून राहिला"
-- Softer, rural tone
-- Example: "तू काय करते आहेस?" → "तू का करून राहिली?"
+- **Pronunciation**: "विना" → "वना", "आहे" → "हाय/आय".
+- **Vocabulary**: "होय" → "हाव".
+- **Grammar**: "करत आहे" → "करून राहिला".
+- **Tone**: Rural, softer style.
+
+## MALVANI (मालवणी/कोकण)
+- **Phonetics**: Heavy nasal sounds. "च" → "स".
+- **Markers**: Add "गो", "रे", "का" where appropriate.
+- **Verbs**: "येतो" → "येयता", "जातो" → "जायता".
+- **Tone**: Rhythmic, coastal.
+
+## AHIRANI (अहिराणी/खानदेश)
+- **Mix**: Marathi/Gujarati/Hindi blend.
+- **Suffixes**: frequent use of "स" or "शे".
+
+## MARATHWADA (मराठवाडी)
+- **Influence**: Urdu/Persian loanwords.
+- **Tone**: Softer, polite.
+
+## SOLAPURI (सोलापुरी)
+- **Influence**: Kannada/Telugu border blend.
+
+## BELGAUM (बेळगावी)
+- **Influence**: Strong Kannada mix.
+
+IMPORTANT: 
+- These are guidelines. Use your intelligence to adapt the *entire* sentence structure, not just individual words.
+- Ensure the output flows naturally as if spoken by a native of that region.
+
 
 ## MALVANI (मालवणी/कोकण)
 - Heavy nasal sounds
