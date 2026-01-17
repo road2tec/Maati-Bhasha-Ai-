@@ -111,6 +111,15 @@ IMPORTANT:
 - Strong Kannada influence
 - Border Marathi characteristics
 
+## STANDARD MARATHI (प्रमाण भाषा)
+- **Style**: Formal, grammatically correct, "Textbook" or "News Anchor" Marathi.
+- **Rules**: Avoid slang or regional variations. Use proper grammar (वधून, करून, जाऊन instead of करून राहिले).
+- **Use Case**: Official documents, formal conversation.
+
+IMPORTANT: 
+- These are guidelines. Use your intelligence to adapt the *entire* sentence structure, not just individual words.
+- Ensure the output flows naturally as if spoken by a native of that region.
+
 STRICT OUTPUT RULES:
 1. Output ONLY valid JSON with keys: dialect, translated, confidence
 2. NEVER explain your translation
@@ -119,7 +128,7 @@ STRICT OUTPUT RULES:
 5. Preserve ALL proper nouns exactly
 
 TASK:
-Convert this Standard Marathi text to {{dialect}}:
+Convert the following text (English, Hindi, or conversational Marathi) into {{dialect}}:
 "{{text}}"
 
 Output JSON only:
