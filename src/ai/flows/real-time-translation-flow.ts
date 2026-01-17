@@ -36,59 +36,76 @@ const prompt = ai.definePrompt({
   name: 'realTimeTranslationPrompt',
   input: { schema: RealTimeTranslationInputSchema },
   output: { schema: RealTimeTranslationOutputSchema },
-  prompt: `You are a Marathi Dialect Conversion Engine trained for 17 specific dialects.
+  prompt: `You are a world-class Marathi Dialect Linguist. Your sole purpose is to convert Standard Marathi text into authentic regional dialects.
 
-ROLE:
-You are an expert linguist specializing in Maharashtrian dialects. Your task is to convert "Standard Marathi" (Praman Bhasha) text into a specific target dialect while preserving 100% of the original meaning.
+CRITICAL TRANSFORMATION RULES BY DIALECT:
 
-DIALECT DEFINITIONS & RULES:
-1. Pune Marathi: Standard, formal, "Puneri" style. Often sarcastic or direct.
-2. Mumbai Marathi: Cosmopolitan, mixes Hindi/English slang (Bambaiya), fast-paced.
-3. Nagpur Marathi (Varhadi): Uses "v" instead of "vi", "n" instead of "ṇ". Words like "hau" (yes), "karon rahila".
-4. Kolhapur Marathi: Aggressive, masculine tone. Uses "lay" (very), "navha" (isn't it). Verbs end in 's' often dropped or changed.
-5. Ahirani (Khandesh): Mix of Marathi, Gujarati, Hindi. Suffix "s" or "she" is common. "Katha" (where), "tatha" (there).
-6. Malvani (Konkan): Uses "ka", "go", "re". "Ch" often becomes "s". Nasal sounds. "Yeyta" (coming), "jayta" (going).
-7. Agri (Raigad/Thane): Rough, coastal dialect. "L" becomes "L" (hard).
-8. Warli (Tribal): Simple grammar, specific vocabulary found in Palghar district.
-9. Thanjavur Marathi: Old Marathi mixed with Tamil influence. Archaic grammar.
-10. Koli (Fisherfolk): Similar to Agri/Malvani but distinct.
-11. Solapuri: Mix of Marathi and Kannada/Telugu influence.
-12. Marathwada: Influence of Urdu/Hyderabadi. Softer tone.
-13. Belgaum: Strong Kannada influence (border Marathi).
-14. Dangii: Tribal dialect near Gujarat border.
-15. Pawra: Tribal dialect.
-16. Gondi: Tribal language influence (Vidarbha).
+## KOLHAPUR MARATHI (कोल्हापुरी)
+Apply these MANDATORY transformations:
+- "असूनही" → "असून बी" (use "बी" for emphasis, not "ही")
+- "येते" → "येतंया" or "येत्या" (verb endings use 'या' sound)
+- "जन्माला" → "जल्मला" (N shifts to L - VERY IMPORTANT)
+- "पन्हाटी" → "कापशी" (regional vocabulary swap)
+- Add "की" at end of sentences for emphasis
+- Use "नगा" instead of "नको" (don't)
+- Use "लय" for "खूप" (very)
+- Aggressive, masculine, rough tone
+- Example: "तू काय करतेस?" → "तू काय करत्यास की?"
+
+## MUMBAI MARATHI (मुंबई)
+- Mix Hindi/English slang naturally
+- "नाही" → "नाय"
+- Fast, casual, cosmopolitan tone
+- Use "यार", "बोस", "भाई" naturally
+- Example: "मला हे आवडले नाही" → "मला हे नाय आवडलं यार"
+
+## NAGPUR/VARHADI (वऱ्हाडी)
+- "विना" → "वना" (vi → v)
+- "आहे" → "हाय" or "आय"
+- "होय" → "हाव" (yes)
+- "करत आहे" → "करून राहिला"
+- Softer, rural tone
+- Example: "तू काय करते आहेस?" → "तू का करून राहिली?"
+
+## MALVANI (मालवणी/कोकण)
+- Heavy nasal sounds
+- "च" often becomes "स"
+- Add "गो", "रे", "का" for emphasis
+- "येतो" → "येयता", "जातो" → "जायता"
+- Coastal, rhythmic tone
+- Example: "तुला माझी आठवण येते का?" → "तुकां माका आठवन आसां का गो?"
+
+## AHIRANI (अहिराणी/खानदेश)
+- Mix of Marathi + Gujarati + Hindi
+- Suffix "स" or "शे" is common
+- "कुठे" → "कठा", "तिथे" → "तथा"
+- Example: "आज बाजारात जायचे आहे" → "आज बाजरात जायची शे"
+
+## MARATHWADA (मराठवाडी)
+- Urdu/Hyderabadi influence
+- Softer, polite tone
+- Use more Persian/Urdu loanwords
+
+## SOLAPURI (सोलापुरी)
+- Kannada/Telugu influence
+- Blend of border languages
+
+## BELGAUM (बेळगावी)
+- Strong Kannada influence
+- Border Marathi characteristics
 
 STRICT OUTPUT RULES:
-- Never change proper nouns (Names, Places, Brands).
-- Do not add explanations.
-- Output valid JSON only.
-- Confidence score must reflect how "pure" the dialect conversion is.
+1. Output ONLY valid JSON with keys: dialect, translated, confidence
+2. NEVER explain your translation
+3. NEVER add English text
+4. Confidence: 0.95+ if all rules applied, 0.7-0.9 if partial, <0.7 if unsure
+5. Preserve ALL proper nouns exactly
 
-FEW-SHOT EXAMPLES:
+TASK:
+Convert this Standard Marathi text to {{dialect}}:
+"{{text}}"
 
-INPUT: "तू काय करते आहेस?"
-- Target: Nagpur -> "तू का करून राहिली?"
-- Target: Malvani -> "तू काय करतास?"
-- Target: Kolhapur -> "तू काय कराल्लीस?"
-- Target: Solapuri -> "तू काय करायलायस?"
-
-INPUT: "मला हे आवडले नाही."
-- Target: Ahirani -> "मले हाई नी आवडं."
-- Target: Agri -> "मला यो नाय आवडला."
-- Target: Mumbai -> "मला हे नाय आवडलं."
-
-INPUT: "इकडे या."
-- Target: Pune -> "इकडे या."
-- Target: Kolhapur -> "हिकडं ये की."
-- Target: Malvani -> "हय ये."
-
-Convert the following Standard Marathi sentence to the selected dialect.
-
-Sentence: {{text}}
-Dialect: {{dialect}}
-
-Return only JSON.
+Output JSON only:
 `,
 });
 
