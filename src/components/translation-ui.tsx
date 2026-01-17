@@ -438,7 +438,7 @@ export default function TranslationUI() {
             <div className="flex items-center justify-between p-1 bg-muted rounded-xl mb-4 border-2 border-border/50">
               <div className="flex-1 text-center">
                 <div className="py-2.5 px-4 font-semibold text-primary truncate">
-                  Standard Marathi
+                  Input or Auto detect
                 </div>
               </div>
 
