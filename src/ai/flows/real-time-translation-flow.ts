@@ -36,6 +36,7 @@ const prompt = ai.definePrompt({
   name: 'realTimeTranslationPrompt',
   input: { schema: RealTimeTranslationInputSchema },
   output: { schema: RealTimeTranslationOutputSchema },
+  model: 'googleai/gemini-2.0-flash',
   config: { temperature: 0.7 },
   prompt: `You are a world-class Marathi Dialect Linguist. Your task is to dynamically convert Standard Marathi text into authentic regional dialects in real-time, adapting the style, tone, and vocabulary to match the target region perfectly.
 
