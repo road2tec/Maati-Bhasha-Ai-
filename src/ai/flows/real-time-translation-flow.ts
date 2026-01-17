@@ -128,8 +128,11 @@ STRICT OUTPUT RULES:
 5. Preserve ALL proper nouns exactly
 
 TASK:
-Convert the following text (English, Hindi, or conversational Marathi) into {{dialect}}:
-"{{text}}"
+Input Text (Auto-Detect Language): "{{text}}"
+Target Dialect: {{dialect}}
+
+Instruction: Detect the language of the Input Text (English, Hindi, Marathi, etc.) and translate/convert it into the Target Dialect.
+
 
 Output JSON only:
 `,
