@@ -29,6 +29,7 @@ interface SpeechRecognition extends EventTarget {
   continuous: boolean;
   lang: string;
   interimResults: boolean;
+  maxAlternatives: number;
   start(): void;
   stop(): void;
   abort(): void;
@@ -86,7 +87,14 @@ export default function TranslationUI() {
   const [dialect, setDialect] = useState<Dialect>('pune');
   const formRef = useRef<HTMLFormElement>(null);
   const [isListening, setIsListening] = useState(false);
+  const [micStatus, setMicStatus] = useState<'idle' | 'starting' | 'listening' | 'processing'>('idle');
+  const micStatusRef = useRef<'idle' | 'starting' | 'listening' | 'processing'>('idle');
   const recognitionRef = useRef<SpeechRecognition | null>(null);
+  const isRecognitionActiveRef = useRef(false);
+  const startTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const retryCountRef = useRef(0);
+  const maxRetries = 3;
+  const lastClickTimeRef = useRef(0);
   const [copied, setCopied] = useState(false);
 
 
@@ -94,14 +102,24 @@ export default function TranslationUI() {
     if (typeof window !== 'undefined' && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         const recognition = new SpeechRecognition();
+        
+        // Configure recognition settings
         recognition.continuous = false;
-        recognition.lang = 'mr-IN'; // Marathi language
-        recognition.interimResults = false;
-        recognition.maxAlternatives = 1;
+        // Use English (India) which has best support, user can speak Hindi/Marathi and it will still work
+        recognition.lang = 'en-IN';
+        recognition.interimResults = true; // Show interim results for better UX
+        
+        try {
+            recognition.maxAlternatives = 1;
+        } catch (e) {
+            console.log('maxAlternatives not supported, ignoring');
+        }
 
         recognition.onresult = (event) => {
             const transcript = event.results[0][0].transcript;
             console.log('Speech recognition result:', transcript);
+            setMicStatus('processing');
+            micStatusRef.current = 'processing';
             
             // Update the input text with the recognized speech
             setInputText((prevText) => {
@@ -110,57 +128,127 @@ export default function TranslationUI() {
             });
             
             toast({
-                title: 'Speech Recognized',
-                description: 'Your speech has been converted to text!',
+                title: '✅ Speech Recognized',
+                description: `"${transcript}"`,
             });
+            
+            setMicStatus('idle');
+            micStatusRef.current = 'idle';
         };
 
         recognition.onerror = (event) => {
             console.error('Speech recognition error:', event.error);
+            // Clear any pending start timeout
+            if (startTimeoutRef.current) {
+                clearTimeout(startTimeoutRef.current);
+                startTimeoutRef.current = null;
+            }
+            
+            // Reset all states on error - NO auto retry (it causes rapid on/off)
+            retryCountRef.current = 0;
+            isRecognitionActiveRef.current = false;
             setIsListening(false);
+            setMicStatus('idle');
+            micStatusRef.current = 'idle';
             
             let errorMessage = 'Could not recognize speech.';
+            let shouldShowToast = true;
+            
+            // Detect Brave browser
+            const isBrave = (navigator as any).brave !== undefined;
+            
             switch (event.error) {
                 case 'no-speech':
-                    errorMessage = 'No speech was detected. Please try again.';
+                    errorMessage = 'No speech was detected. Please speak louder or closer to the mic.';
                     break;
                 case 'audio-capture':
                     errorMessage = 'No microphone was found. Please check your device.';
                     break;
                 case 'not-allowed':
-                    errorMessage = 'Microphone permission denied. Please allow microphone access.';
+                    errorMessage = 'Microphone permission denied. Please click the lock icon in the address bar → Site settings → Allow Microphone.';
                     break;
                 case 'network':
-                    errorMessage = 'Network error occurred. Please check your connection.';
+                    if (isBrave) {
+                        errorMessage = '⚠️ Brave browser blocks speech recognition. Please open this page in Google Chrome instead.';
+                    } else {
+                        errorMessage = 'Network error. Please use Google Chrome browser for voice input.';
+                    }
+                    break;
+                case 'aborted':
+                    // User stopped, not really an error
+                    shouldShowToast = false;
+                    break;
+                case 'service-not-allowed':
+                    errorMessage = 'Speech service not available. Please try using Chrome browser.';
                     break;
                 default:
                     errorMessage = `Error: ${event.error}`;
             }
             
-            toast({
-                variant: 'destructive',
-                title: 'Voice Recognition Error',
-                description: errorMessage,
-            });
+            if (shouldShowToast) {
+                toast({
+                    variant: 'destructive',
+                    title: 'Voice Recognition Error',
+                    description: errorMessage,
+                });
+            }
         };
         
         recognition.onstart = () => {
           console.log('Speech recognition started');
+          // Clear the start timeout since recognition started successfully
+          if (startTimeoutRef.current) {
+            clearTimeout(startTimeoutRef.current);
+            startTimeoutRef.current = null;
+          }
+          // Reset retry count on successful start
+          retryCountRef.current = 0;
+          isRecognitionActiveRef.current = true;
           setIsListening(true);
+          setMicStatus('listening');
+          micStatusRef.current = 'listening';
+          toast({
+            title: '🎤 Listening...',
+            description: 'Speak now - your voice is being captured',
+          });
         };
         
         recognition.onend = () => {
           console.log('Speech recognition ended');
+          isRecognitionActiveRef.current = false;
           setIsListening(false);
+          setMicStatus('idle');
+          micStatusRef.current = 'idle';
         };
         
         recognitionRef.current = recognition;
     } else {
         console.warn("Speech recognition not supported in this browser.");
     }
+    
+    // Cleanup function
+    return () => {
+      if (recognitionRef.current) {
+        try {
+          recognitionRef.current.abort();
+        } catch (e) {
+          console.log('Cleanup: abort error ignored');
+        }
+        isRecognitionActiveRef.current = false;
+        recognitionRef.current = null;
+      }
+    };
   }, [toast]);
 
-  const handleMicClick = () => {
+  const handleMicClick = async () => {
+    // Debounce - prevent rapid clicking (must wait 1 second between clicks)
+    const now = Date.now();
+    if (now - lastClickTimeRef.current < 1000) {
+        console.log('Click debounced - too soon');
+        return;
+    }
+    lastClickTimeRef.current = now;
+    
     if (!recognitionRef.current) {
         toast({
             variant: 'destructive',
@@ -170,28 +258,131 @@ export default function TranslationUI() {
         return;
     }
 
-    if (isListening) {
+    if (isListening || isRecognitionActiveRef.current || micStatusRef.current === 'listening') {
         // Stop the recognition
+        console.log('Stopping speech recognition');
+        setMicStatus('idle');
+        micStatusRef.current = 'idle';
+        isRecognitionActiveRef.current = false;
+        setIsListening(false);
+        
         try {
             recognitionRef.current.stop();
-            console.log('Stopping speech recognition');
         } catch (error) {
             console.error("Failed to stop speech recognition:", error);
-            setIsListening(false);
         }
-    } else {
-        // Start the recognition
+        
+        // Stop the microphone stream
         try {
-            console.log('Starting speech recognition');
+            const stream = (window as any).__micStream;
+            if (stream) {
+                stream.getTracks().forEach((track: MediaStreamTrack) => track.stop());
+                (window as any).__micStream = null;
+            }
+        } catch (e) {
+            console.log('Error stopping mic stream:', e);
+        }
+        
+        toast({
+          title: '🛑 Stopped',
+          description: 'Voice recognition stopped',
+        });
+    } else {
+        // Check if already starting or listening
+        if (micStatusRef.current !== 'idle') {
+            console.log('Recognition not idle, skipping start');
+            return;
+        }
+        
+        console.log('Starting speech recognition');
+        setMicStatus('starting');
+        micStatusRef.current = 'starting';
+        
+        // First request microphone permission explicitly
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            console.log('Microphone access granted');
+            // Keep the stream active - don't stop it
+            // This ensures the mic stays enabled
+            
+            // Store stream reference to stop later
+            (window as any).__micStream = stream;
+        } catch (permErr: any) {
+            console.error('Mic permission error:', permErr);
+            setMicStatus('idle');
+            micStatusRef.current = 'idle';
+            toast({
+                variant: 'destructive',
+                title: 'Microphone Access Denied',
+                description: 'Please allow microphone access in your browser settings.',
+            });
+            return;
+        }
+        
+        // Clear any existing timeout
+        if (startTimeoutRef.current) {
+            clearTimeout(startTimeoutRef.current);
+        }
+        
+        // Set a timeout to reset state if recognition doesn't start within 5 seconds
+        startTimeoutRef.current = setTimeout(() => {
+            if (micStatusRef.current === 'starting') {
+                console.log('Recognition start timed out');
+                setMicStatus('idle');
+                micStatusRef.current = 'idle';
+                isRecognitionActiveRef.current = false;
+                setIsListening(false);
+                toast({
+                    variant: 'destructive',
+                    title: 'Mic Timeout',
+                    description: 'Speech recognition service unavailable. Try refreshing the page.',
+                });
+            }
+        }, 5000);
+        
+        // Start recognition
+        try {
             recognitionRef.current.start();
-        } catch (error) {
-            console.error("Failed to start speech recognition:", error);
+            console.log('Speech recognition start() called');
+            
+            // Manually set listening state after a short delay if onstart hasn't fired
+            setTimeout(() => {
+                if (micStatusRef.current === 'starting' && recognitionRef.current) {
+                    console.log('Manually setting listening state');
+                    setMicStatus('listening');
+                    micStatusRef.current = 'listening';
+                    setIsListening(true);
+                    isRecognitionActiveRef.current = true;
+                    if (startTimeoutRef.current) {
+                        clearTimeout(startTimeoutRef.current);
+                        startTimeoutRef.current = null;
+                    }
+                    toast({
+                        title: '🎤 Listening...',
+                        description: 'Speak now - your voice is being captured',
+                    });
+                }
+            }, 500);
+            
+        } catch (startError: any) {
+            console.error("Failed to start speech recognition:", startError);
+            if (startTimeoutRef.current) clearTimeout(startTimeoutRef.current);
+            
+            isRecognitionActiveRef.current = false;
+            setIsListening(false);
+            setMicStatus('idle');
+            micStatusRef.current = 'idle';
+            
+            let errorMessage = 'Failed to start voice recognition. Please try again.';
+            if (startError.message && startError.message.includes('already started')) {
+                errorMessage = 'Voice recognition is already active. Please wait a moment and try again.';
+            }
+            
             toast({
                 variant: 'destructive',
                 title: 'Error',
-                description: 'Failed to start voice recognition. Please try again.',
+                description: errorMessage,
             });
-            setIsListening(false);
         }
     }
   };
@@ -258,7 +449,7 @@ export default function TranslationUI() {
               </div>
               {/* Output Section */}
               <div className="relative">
-                <Label className="text-sm font-semibold text-primary absolute top-2 left-4 bg-background px-1 z-10">Translated Dialect</Label>
+                <Label className="text-sm font-semibold text-primary absolute top-2 left-4 bg-background px-1 z-10">{dialects.find(d => d.value === dialect)?.label || 'Translated Dialect'}</Label>
                 <div className="relative min-h-[250px] w-full rounded-xl border-2 border-border/70 bg-muted p-4 text-lg pt-8">
                   {isPending ? (
                     <div className="absolute inset-0 flex items-center justify-center bg-background/50 backdrop-blur-sm rounded-xl">
@@ -309,13 +500,27 @@ export default function TranslationUI() {
 
                 <Button 
                     type="button" 
-                    variant={isListening ? "destructive" : "outline"} 
+                    variant={micStatus === 'listening' ? "destructive" : micStatus === 'starting' ? "secondary" : "outline"} 
                     size="lg" 
                     onClick={handleMicClick}
-                    className="w-full md:w-auto h-12 text-lg font-bold border-2 bg-background"
+                    disabled={micStatus === 'starting' || micStatus === 'processing'}
+                    className={`w-full md:w-auto h-12 text-lg font-bold border-2 bg-background ${
+                      micStatus === 'listening' ? 'animate-pulse ring-2 ring-red-500 ring-offset-2' : ''
+                    }`}
                 >
-                    {isListening ? <MicOff /> : <Mic />}
-                    <span className="ml-2">{isListening ? 'Listening...' : 'Use Mic'}</span>
+                    {micStatus === 'listening' ? (
+                      <MicOff className="animate-bounce" />
+                    ) : micStatus === 'starting' ? (
+                      <LoaderCircle className="animate-spin" />
+                    ) : (
+                      <Mic />
+                    )}
+                    <span className="ml-2">
+                      {micStatus === 'listening' ? '🔴 Stop Listening' : 
+                       micStatus === 'starting' ? 'Starting...' : 
+                       micStatus === 'processing' ? 'Processing...' : 
+                       '🎤 Use Mic'}
+                    </span>
                 </Button>
             </div>
             
