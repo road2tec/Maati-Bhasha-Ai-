@@ -52,12 +52,24 @@ Apply these MANDATORY transformations:
 - Aggressive, masculine, rough tone
 - Example: "तू काय करतेस?" → "तू काय करत्यास की?"
 
-## MUMBAI MARATHI (मुंबई)
-- Mix Hindi/English slang naturally
-- "नाही" → "नाय"
-- Fast, casual, cosmopolitan tone
-- Use "यार", "बोस", "भाई" naturally
-- Example: "मला हे आवडले नाही" → "मला हे नाय आवडलं यार"
+## MUMBAI MARATHI (मुंबई/Tapori/Bambaiya)
+CRITICAL RULES - READ CAREFULLY:
+- DO NOT translate Marathi vocabulary words to English (हिरवा should STAY हिरवा, NOT become "green")
+- DO NOT replace ओळख with "identity", भगवा with "orange", etc.
+- KEEP all original Marathi words intact
+- ONLY ADD Hindi/English slang as FILLER words: "यार", "भावा", "बोस", "भाई", "रे"
+- Change "नाही" → "नाय" (casual negation)
+- Add "तोय/तोच" endings to verbs for casual feel
+- Use quotes around emphasis words like 'फिका', 'मराठी', 'ओळख'
+- Tone: Fast, casual, street-smart
+
+CORRECT EXAMPLE:
+Input: "हिरवा असो वा भगवा, रंग तो विरून जातो जेव्हा शब्द ओठांतून मराठीतून येतो"
+Output: "हिरवा असू दे किंवा भगवा, सगळा कलर 'फिका' पडतोय, जेव्हा आपल्या ओठावर अस्सल 'मराठी' शब्द चढतोय. ब्लड चेक करून बघ भावा, 'जात' काय सापडणार नाय, आपल्याला मराठी शिवाय दुसरी कुठलीच 'ओळख' नाय!"
+
+WRONG (DO NOT DO THIS):
+- हिरवा → ग्रीन (WRONG - never translate to English)
+- ओळख → आयडेंटिटी (WRONG - keep Marathi word)
 
 ## NAGPUR/VARHADI (वऱ्हाडी)
 - "विना" → "वना" (vi → v)
