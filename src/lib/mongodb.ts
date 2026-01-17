@@ -1,4 +1,4 @@
-import { MongoClient, Db } from 'mongodb';
+import { MongoClient, Db, MongoClientOptions } from 'mongodb';
 
 if (!process.env.MONGODB_URI) {
   console.error('MONGODB_URI is not defined in environment variables');
@@ -9,7 +9,17 @@ console.log('MongoDB URI found:', process.env.MONGODB_URI ? 'Yes' : 'No');
 console.log('MongoDB DB Name:', process.env.MONGODB_DB_NAME || 'marathi_translator');
 
 const uri: string = process.env.MONGODB_URI;
-const options = {};
+
+interface CustomMongoClientOptions extends MongoClientOptions {
+  family?: number;
+}
+
+const options: CustomMongoClientOptions = {
+  maxPoolSize: 10,
+  serverSelectionTimeoutMS: 5000,
+  socketTimeoutMS: 45000,
+  family: 4 // Force IPv4
+};
 
 let client: MongoClient;
 let clientPromise: Promise<MongoClient>;
