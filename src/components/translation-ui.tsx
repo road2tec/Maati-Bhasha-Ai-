@@ -100,132 +100,132 @@ export default function TranslationUI() {
 
   useEffect(() => {
     if (typeof window !== 'undefined' && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        const recognition = new SpeechRecognition();
-        
-        // Configure recognition settings
-        recognition.continuous = false;
-        // Use English (India) which has best support, user can speak Hindi/Marathi and it will still work
-        recognition.lang = 'en-IN';
-        recognition.interimResults = true; // Show interim results for better UX
-        
-        try {
-            recognition.maxAlternatives = 1;
-        } catch (e) {
-            console.log('maxAlternatives not supported, ignoring');
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const recognition = new SpeechRecognition();
+
+      // Configure recognition settings
+      recognition.continuous = false;
+      // Use English (India) which has best support, user can speak Hindi/Marathi and it will still work
+      recognition.lang = 'en-IN';
+      recognition.interimResults = true; // Show interim results for better UX
+
+      try {
+        recognition.maxAlternatives = 1;
+      } catch (e) {
+        console.log('maxAlternatives not supported, ignoring');
+      }
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        console.log('Speech recognition result:', transcript);
+        setMicStatus('processing');
+        micStatusRef.current = 'processing';
+
+        // Update the input text with the recognized speech
+        setInputText((prevText) => {
+          // If there's existing text, append with a space, otherwise just set the transcript
+          return prevText.trim() ? prevText + ' ' + transcript : transcript;
+        });
+
+        toast({
+          title: '✅ Speech Recognized',
+          description: `"${transcript}"`,
+        });
+
+        setMicStatus('idle');
+        micStatusRef.current = 'idle';
+      };
+
+      recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        // Clear any pending start timeout
+        if (startTimeoutRef.current) {
+          clearTimeout(startTimeoutRef.current);
+          startTimeoutRef.current = null;
         }
 
-        recognition.onresult = (event) => {
-            const transcript = event.results[0][0].transcript;
-            console.log('Speech recognition result:', transcript);
-            setMicStatus('processing');
-            micStatusRef.current = 'processing';
-            
-            // Update the input text with the recognized speech
-            setInputText((prevText) => {
-                // If there's existing text, append with a space, otherwise just set the transcript
-                return prevText.trim() ? prevText + ' ' + transcript : transcript;
-            });
-            
-            toast({
-                title: '✅ Speech Recognized',
-                description: `"${transcript}"`,
-            });
-            
-            setMicStatus('idle');
-            micStatusRef.current = 'idle';
-        };
+        // Reset all states on error - NO auto retry (it causes rapid on/off)
+        retryCountRef.current = 0;
+        isRecognitionActiveRef.current = false;
+        setIsListening(false);
+        setMicStatus('idle');
+        micStatusRef.current = 'idle';
 
-        recognition.onerror = (event) => {
-            console.error('Speech recognition error:', event.error);
-            // Clear any pending start timeout
-            if (startTimeoutRef.current) {
-                clearTimeout(startTimeoutRef.current);
-                startTimeoutRef.current = null;
+        let errorMessage = 'Could not recognize speech.';
+        let shouldShowToast = true;
+
+        // Detect Brave browser
+        const isBrave = (navigator as any).brave !== undefined;
+
+        switch (event.error) {
+          case 'no-speech':
+            errorMessage = 'No speech was detected. Please speak louder or closer to the mic.';
+            break;
+          case 'audio-capture':
+            errorMessage = 'No microphone was found. Please check your device.';
+            break;
+          case 'not-allowed':
+            errorMessage = 'Microphone permission denied. Please click the lock icon in the address bar → Site settings → Allow Microphone.';
+            break;
+          case 'network':
+            if (isBrave) {
+              errorMessage = '⚠️ Brave browser blocks speech recognition. Please open this page in Google Chrome instead.';
+            } else {
+              errorMessage = 'Network error. Please use Google Chrome browser for voice input.';
             }
-            
-            // Reset all states on error - NO auto retry (it causes rapid on/off)
-            retryCountRef.current = 0;
-            isRecognitionActiveRef.current = false;
-            setIsListening(false);
-            setMicStatus('idle');
-            micStatusRef.current = 'idle';
-            
-            let errorMessage = 'Could not recognize speech.';
-            let shouldShowToast = true;
-            
-            // Detect Brave browser
-            const isBrave = (navigator as any).brave !== undefined;
-            
-            switch (event.error) {
-                case 'no-speech':
-                    errorMessage = 'No speech was detected. Please speak louder or closer to the mic.';
-                    break;
-                case 'audio-capture':
-                    errorMessage = 'No microphone was found. Please check your device.';
-                    break;
-                case 'not-allowed':
-                    errorMessage = 'Microphone permission denied. Please click the lock icon in the address bar → Site settings → Allow Microphone.';
-                    break;
-                case 'network':
-                    if (isBrave) {
-                        errorMessage = '⚠️ Brave browser blocks speech recognition. Please open this page in Google Chrome instead.';
-                    } else {
-                        errorMessage = 'Network error. Please use Google Chrome browser for voice input.';
-                    }
-                    break;
-                case 'aborted':
-                    // User stopped, not really an error
-                    shouldShowToast = false;
-                    break;
-                case 'service-not-allowed':
-                    errorMessage = 'Speech service not available. Please try using Chrome browser.';
-                    break;
-                default:
-                    errorMessage = `Error: ${event.error}`;
-            }
-            
-            if (shouldShowToast) {
-                toast({
-                    variant: 'destructive',
-                    title: 'Voice Recognition Error',
-                    description: errorMessage,
-                });
-            }
-        };
-        
-        recognition.onstart = () => {
-          console.log('Speech recognition started');
-          // Clear the start timeout since recognition started successfully
-          if (startTimeoutRef.current) {
-            clearTimeout(startTimeoutRef.current);
-            startTimeoutRef.current = null;
-          }
-          // Reset retry count on successful start
-          retryCountRef.current = 0;
-          isRecognitionActiveRef.current = true;
-          setIsListening(true);
-          setMicStatus('listening');
-          micStatusRef.current = 'listening';
+            break;
+          case 'aborted':
+            // User stopped, not really an error
+            shouldShowToast = false;
+            break;
+          case 'service-not-allowed':
+            errorMessage = 'Speech service not available. Please try using Chrome browser.';
+            break;
+          default:
+            errorMessage = `Error: ${event.error}`;
+        }
+
+        if (shouldShowToast) {
           toast({
-            title: '🎤 Listening...',
-            description: 'Speak now - your voice is being captured',
+            variant: 'destructive',
+            title: 'Voice Recognition Error',
+            description: errorMessage,
           });
-        };
-        
-        recognition.onend = () => {
-          console.log('Speech recognition ended');
-          isRecognitionActiveRef.current = false;
-          setIsListening(false);
-          setMicStatus('idle');
-          micStatusRef.current = 'idle';
-        };
-        
-        recognitionRef.current = recognition;
+        }
+      };
+
+      recognition.onstart = () => {
+        console.log('Speech recognition started');
+        // Clear the start timeout since recognition started successfully
+        if (startTimeoutRef.current) {
+          clearTimeout(startTimeoutRef.current);
+          startTimeoutRef.current = null;
+        }
+        // Reset retry count on successful start
+        retryCountRef.current = 0;
+        isRecognitionActiveRef.current = true;
+        setIsListening(true);
+        setMicStatus('listening');
+        micStatusRef.current = 'listening';
+        toast({
+          title: '🎤 Listening...',
+          description: 'Speak now - your voice is being captured',
+        });
+      };
+
+      recognition.onend = () => {
+        console.log('Speech recognition ended');
+        isRecognitionActiveRef.current = false;
+        setIsListening(false);
+        setMicStatus('idle');
+        micStatusRef.current = 'idle';
+      };
+
+      recognitionRef.current = recognition;
     } else {
-        console.warn("Speech recognition not supported in this browser.");
+      console.warn("Speech recognition not supported in this browser.");
     }
-    
+
     // Cleanup function
     return () => {
       if (recognitionRef.current) {
@@ -244,146 +244,146 @@ export default function TranslationUI() {
     // Debounce - prevent rapid clicking (must wait 1 second between clicks)
     const now = Date.now();
     if (now - lastClickTimeRef.current < 1000) {
-        console.log('Click debounced - too soon');
-        return;
+      console.log('Click debounced - too soon');
+      return;
     }
     lastClickTimeRef.current = now;
-    
+
     if (!recognitionRef.current) {
-        toast({
-            variant: 'destructive',
-            title: 'Not Supported',
-            description: 'Voice input is not supported in your browser. Please use Chrome, Edge, or Safari.',
-        });
-        return;
+      toast({
+        variant: 'destructive',
+        title: 'Not Supported',
+        description: 'Voice input is not supported in your browser. Please use Chrome, Edge, or Safari.',
+      });
+      return;
     }
 
     if (isListening || isRecognitionActiveRef.current || micStatusRef.current === 'listening') {
-        // Stop the recognition
-        console.log('Stopping speech recognition');
+      // Stop the recognition
+      console.log('Stopping speech recognition');
+      setMicStatus('idle');
+      micStatusRef.current = 'idle';
+      isRecognitionActiveRef.current = false;
+      setIsListening(false);
+
+      try {
+        recognitionRef.current.stop();
+      } catch (error) {
+        console.error("Failed to stop speech recognition:", error);
+      }
+
+      // Stop the microphone stream
+      try {
+        const stream = (window as any).__micStream;
+        if (stream) {
+          stream.getTracks().forEach((track: MediaStreamTrack) => track.stop());
+          (window as any).__micStream = null;
+        }
+      } catch (e) {
+        console.log('Error stopping mic stream:', e);
+      }
+
+      toast({
+        title: '🛑 Stopped',
+        description: 'Voice recognition stopped',
+      });
+    } else {
+      // Check if already starting or listening
+      if (micStatusRef.current !== 'idle') {
+        console.log('Recognition not idle, skipping start');
+        return;
+      }
+
+      console.log('Starting speech recognition');
+      setMicStatus('starting');
+      micStatusRef.current = 'starting';
+
+      // First request microphone permission explicitly
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        console.log('Microphone access granted');
+        // Keep the stream active - don't stop it
+        // This ensures the mic stays enabled
+
+        // Store stream reference to stop later
+        (window as any).__micStream = stream;
+      } catch (permErr: any) {
+        console.error('Mic permission error:', permErr);
         setMicStatus('idle');
         micStatusRef.current = 'idle';
+        toast({
+          variant: 'destructive',
+          title: 'Microphone Access Denied',
+          description: 'Please allow microphone access in your browser settings.',
+        });
+        return;
+      }
+
+      // Clear any existing timeout
+      if (startTimeoutRef.current) {
+        clearTimeout(startTimeoutRef.current);
+      }
+
+      // Set a timeout to reset state if recognition doesn't start within 5 seconds
+      startTimeoutRef.current = setTimeout(() => {
+        if (micStatusRef.current === 'starting') {
+          console.log('Recognition start timed out');
+          setMicStatus('idle');
+          micStatusRef.current = 'idle';
+          isRecognitionActiveRef.current = false;
+          setIsListening(false);
+          toast({
+            variant: 'destructive',
+            title: 'Mic Timeout',
+            description: 'Speech recognition service unavailable. Try refreshing the page.',
+          });
+        }
+      }, 5000);
+
+      // Start recognition
+      try {
+        recognitionRef.current.start();
+        console.log('Speech recognition start() called');
+
+        // Manually set listening state after a short delay if onstart hasn't fired
+        setTimeout(() => {
+          if (micStatusRef.current === 'starting' && recognitionRef.current) {
+            console.log('Manually setting listening state');
+            setMicStatus('listening');
+            micStatusRef.current = 'listening';
+            setIsListening(true);
+            isRecognitionActiveRef.current = true;
+            if (startTimeoutRef.current) {
+              clearTimeout(startTimeoutRef.current);
+              startTimeoutRef.current = null;
+            }
+            toast({
+              title: '🎤 Listening...',
+              description: 'Speak now - your voice is being captured',
+            });
+          }
+        }, 500);
+
+      } catch (startError: any) {
+        console.error("Failed to start speech recognition:", startError);
+        if (startTimeoutRef.current) clearTimeout(startTimeoutRef.current);
+
         isRecognitionActiveRef.current = false;
         setIsListening(false);
-        
-        try {
-            recognitionRef.current.stop();
-        } catch (error) {
-            console.error("Failed to stop speech recognition:", error);
+        setMicStatus('idle');
+        micStatusRef.current = 'idle';
+
+        let errorMessage = 'Failed to start voice recognition. Please try again.';
+        if (startError.message && startError.message.includes('already started')) {
+          errorMessage = 'Voice recognition is already active. Please wait a moment and try again.';
         }
-        
-        // Stop the microphone stream
-        try {
-            const stream = (window as any).__micStream;
-            if (stream) {
-                stream.getTracks().forEach((track: MediaStreamTrack) => track.stop());
-                (window as any).__micStream = null;
-            }
-        } catch (e) {
-            console.log('Error stopping mic stream:', e);
-        }
-        
+
         toast({
-          title: '🛑 Stopped',
-          description: 'Voice recognition stopped',
+          variant: 'destructive',
+          title: 'Error',
+          description: errorMessage,
         });
-    } else {
-        // Check if already starting or listening
-        if (micStatusRef.current !== 'idle') {
-            console.log('Recognition not idle, skipping start');
-            return;
-        }
-        
-        console.log('Starting speech recognition');
-        setMicStatus('starting');
-        micStatusRef.current = 'starting';
-        
-        // First request microphone permission explicitly
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-            console.log('Microphone access granted');
-            // Keep the stream active - don't stop it
-            // This ensures the mic stays enabled
-            
-            // Store stream reference to stop later
-            (window as any).__micStream = stream;
-        } catch (permErr: any) {
-            console.error('Mic permission error:', permErr);
-            setMicStatus('idle');
-            micStatusRef.current = 'idle';
-            toast({
-                variant: 'destructive',
-                title: 'Microphone Access Denied',
-                description: 'Please allow microphone access in your browser settings.',
-            });
-            return;
-        }
-        
-        // Clear any existing timeout
-        if (startTimeoutRef.current) {
-            clearTimeout(startTimeoutRef.current);
-        }
-        
-        // Set a timeout to reset state if recognition doesn't start within 5 seconds
-        startTimeoutRef.current = setTimeout(() => {
-            if (micStatusRef.current === 'starting') {
-                console.log('Recognition start timed out');
-                setMicStatus('idle');
-                micStatusRef.current = 'idle';
-                isRecognitionActiveRef.current = false;
-                setIsListening(false);
-                toast({
-                    variant: 'destructive',
-                    title: 'Mic Timeout',
-                    description: 'Speech recognition service unavailable. Try refreshing the page.',
-                });
-            }
-        }, 5000);
-        
-        // Start recognition
-        try {
-            recognitionRef.current.start();
-            console.log('Speech recognition start() called');
-            
-            // Manually set listening state after a short delay if onstart hasn't fired
-            setTimeout(() => {
-                if (micStatusRef.current === 'starting' && recognitionRef.current) {
-                    console.log('Manually setting listening state');
-                    setMicStatus('listening');
-                    micStatusRef.current = 'listening';
-                    setIsListening(true);
-                    isRecognitionActiveRef.current = true;
-                    if (startTimeoutRef.current) {
-                        clearTimeout(startTimeoutRef.current);
-                        startTimeoutRef.current = null;
-                    }
-                    toast({
-                        title: '🎤 Listening...',
-                        description: 'Speak now - your voice is being captured',
-                    });
-                }
-            }, 500);
-            
-        } catch (startError: any) {
-            console.error("Failed to start speech recognition:", startError);
-            if (startTimeoutRef.current) clearTimeout(startTimeoutRef.current);
-            
-            isRecognitionActiveRef.current = false;
-            setIsListening(false);
-            setMicStatus('idle');
-            micStatusRef.current = 'idle';
-            
-            let errorMessage = 'Failed to start voice recognition. Please try again.';
-            if (startError.message && startError.message.includes('already started')) {
-                errorMessage = 'Voice recognition is already active. Please wait a moment and try again.';
-            }
-            
-            toast({
-                variant: 'destructive',
-                title: 'Error',
-                description: errorMessage,
-            });
-        }
+      }
     }
   };
 
@@ -422,7 +422,7 @@ export default function TranslationUI() {
       setCopied(true);
     }
   };
-  
+
   const confidencePercent = Math.round((formState.confidence || 0) * 100);
 
   return (
@@ -434,23 +434,72 @@ export default function TranslationUI() {
         </CardHeader>
         <CardContent className="p-4 md:p-6">
           <form ref={formRef} action={formAction} className="space-y-6">
+            {/* Language Selector Header */}
+            <div className="flex items-center justify-between p-1 bg-muted rounded-xl mb-4 border-2 border-border/50">
+              <div className="flex-1 text-center">
+                <div className="py-2.5 px-4 font-semibold text-primary truncate">
+                  Standard Marathi
+                </div>
+              </div>
+
+              <div className="px-2 text-muted-foreground/50">
+                <ArrowRightLeft size={20} />
+              </div>
+
+              <div className="flex-1">
+                <Select name="dialect" value={dialect} onValueChange={(value: Dialect) => setDialect(value)}>
+                  <SelectTrigger className="w-full h-full border-0 bg-transparent shadow-none font-semibold text-primary justify-center focus:ring-0 text-center">
+                    <SelectValue placeholder="Select Dialect" />
+                  </SelectTrigger>
+                  <SelectContent align="center" className="min-w-[200px]">
+                    {dialects.filter(d => d.value !== 'standard').map(d => (
+                      <SelectItem key={d.value} value={d.value} className="text-base justify-center">
+                        {d.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
               {/* Input Section */}
               <div className="relative">
-                <Label htmlFor="input-text" className="text-sm font-semibold text-primary absolute top-2 left-4 bg-background px-1">Standard Marathi</Label>
                 <Textarea
                   id="input-text"
                   name="text"
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
-                  placeholder="Enter Standard Marathi text..."
-                  className="min-h-[250px] text-lg border-2 border-border/70 rounded-xl focus:ring-primary focus:border-primary transition pt-8"
+                  placeholder="Enter specific text to translate..."
+                  className="min-h-[250px] text-lg border-2 border-border/70 rounded-xl focus:ring-primary focus:border-primary transition p-4 resize-none"
                 />
+
+                {/* Mic Button absolute inside input */}
+                <div className="absolute bottom-3 left-3">
+                  <Button
+                    type="button"
+                    variant={micStatus === 'listening' ? "destructive" : "secondary"}
+                    size="icon"
+                    onClick={handleMicClick}
+                    disabled={micStatus === 'starting' || micStatus === 'processing'}
+                    className={`h-10 w-10 rounded-full shadow-md ${micStatus === 'listening' ? 'animate-pulse ring-2 ring-red-500 ring-offset-2' : ''
+                      }`}
+                    title="Use Microphone"
+                  >
+                    {micStatus === 'listening' ? (
+                      <MicOff className="h-5 w-5 animate-bounce" />
+                    ) : micStatus === 'starting' ? (
+                      <LoaderCircle className="h-5 w-5 animate-spin" />
+                    ) : (
+                      <Mic className="h-5 w-5" />
+                    )}
+                  </Button>
+                </div>
               </div>
+
               {/* Output Section */}
               <div className="relative">
-                <Label className="text-sm font-semibold text-primary absolute top-2 left-4 bg-background px-1 z-10">{dialects.find(d => d.value === dialect)?.label || 'Translated Dialect'}</Label>
-                <div className="relative min-h-[250px] w-full rounded-xl border-2 border-border/70 bg-muted p-4 text-lg pt-8">
+                <div className="relative min-h-[250px] w-full rounded-xl border-2 border-border/70 bg-muted/30 p-4 text-lg">
                   {isPending ? (
                     <div className="absolute inset-0 flex items-center justify-center bg-background/50 backdrop-blur-sm rounded-xl">
                       <LoaderCircle className="h-10 w-10 animate-spin text-primary" />
@@ -459,7 +508,7 @@ export default function TranslationUI() {
                     <>
                       <p className="whitespace-pre-wrap">
                         {typewriterOutput}
-                        {!typewriterOutput && <span className="text-muted-foreground/70">Translation will appear here...</span>}
+                        {!typewriterOutput && <span className="text-muted-foreground/50 italic">Translation will appear here...</span>}
                       </p>
                       {typewriterOutput && (
                         <Button
@@ -467,7 +516,8 @@ export default function TranslationUI() {
                           variant="ghost"
                           size="icon"
                           onClick={handleCopy}
-                          className="absolute top-2 right-2 text-muted-foreground hover:bg-accent"
+                          className="absolute bottom-3 right-3 text-muted-foreground hover:bg-accent h-10 w-10 rounded-full"
+                          title="Copy Translation"
                         >
                           {copied ? <Check className="h-5 w-5 text-green-500" /> : <Copy className="h-5 w-5" />}
                         </Button>
@@ -479,58 +529,26 @@ export default function TranslationUI() {
             </div>
 
             {/* Controls */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 rounded-xl bg-muted p-4 border-2 border-dashed">
-                <Select name="dialect" value={dialect} onValueChange={(value: Dialect) => setDialect(value)}>
-                    <SelectTrigger className="w-full md:w-[240px] h-12 text-md font-semibold border-2 bg-background">
-                    <SelectValue placeholder="Select Dialect" />
-                    </SelectTrigger>
-                    <SelectContent>
-                    {dialects.filter(d => d.value !== 'standard').map(d => (
-                        <SelectItem key={d.value} value={d.value} className="text-md">
-                        {d.label}
-                        </SelectItem>
-                    ))}
-                    </SelectContent>
-                </Select>
-
-                <Button type="button" onClick={handleTranslateClick} disabled={isPending} size="lg" className="w-full md:w-auto h-12 text-lg font-bold">
-                    {isPending ? <LoaderCircle className="animate-spin" /> : <ArrowRightLeft />}
-                    <span className="ml-2">Translate</span>
-                </Button>
-
-                <Button 
-                    type="button" 
-                    variant={micStatus === 'listening' ? "destructive" : micStatus === 'starting' ? "secondary" : "outline"} 
-                    size="lg" 
-                    onClick={handleMicClick}
-                    disabled={micStatus === 'starting' || micStatus === 'processing'}
-                    className={`w-full md:w-auto h-12 text-lg font-bold border-2 bg-background ${
-                      micStatus === 'listening' ? 'animate-pulse ring-2 ring-red-500 ring-offset-2' : ''
-                    }`}
-                >
-                    {micStatus === 'listening' ? (
-                      <MicOff className="animate-bounce" />
-                    ) : micStatus === 'starting' ? (
-                      <LoaderCircle className="animate-spin" />
-                    ) : (
-                      <Mic />
-                    )}
-                    <span className="ml-2">
-                      {micStatus === 'listening' ? '🔴 Stop Listening' : 
-                       micStatus === 'starting' ? 'Starting...' : 
-                       micStatus === 'processing' ? 'Processing...' : 
-                       '🎤 Use Mic'}
-                    </span>
-                </Button>
+            <div className="flex justify-center pt-2">
+              <Button
+                type="button"
+                onClick={handleTranslateClick}
+                disabled={isPending || !inputText.trim()}
+                size="lg"
+                className="w-full md:w-1/3 h-12 text-lg font-bold shadow-lg transition-all hover:scale-105"
+              >
+                {isPending ? <LoaderCircle className="animate-spin mr-2" /> : <Sparkles className="mr-2 h-5 w-5" />}
+                Translate
+              </Button>
             </div>
-            
+
             {/* Confidence and Debug */}
             <div className="space-y-4 pt-4">
               {formState.type === 'success' && formState.translatedText && (
                 <div className="flex items-center gap-4 rounded-lg bg-green-50/50 p-3 border border-green-200">
                   <div className="flex-shrink-0">
                     <Badge variant={confidencePercent > 85 ? 'default' : 'secondary'} className="text-md">
-                        {confidencePercent}% Confidence
+                      {confidencePercent}% Confidence
                     </Badge>
                   </div>
                   <Progress value={confidencePercent} className="h-3 flex-grow" />
