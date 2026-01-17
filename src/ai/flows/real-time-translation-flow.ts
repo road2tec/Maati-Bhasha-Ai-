@@ -7,8 +7,8 @@
  * - RealTimeTranslationOutput - Return type for the realTimeTranslation function.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { ai } from '@/ai/genkit';
+import { z } from 'genkit';
 import { dialects } from '@/lib/languages';
 
 const dialectValues = dialects.map(d => d.value) as [string, ...string[]];
@@ -34,40 +34,54 @@ export async function realTimeTranslation(input: RealTimeTranslationInput): Prom
 
 const prompt = ai.definePrompt({
   name: 'realTimeTranslationPrompt',
-  input: {schema: RealTimeTranslationInputSchema},
-  output: {schema: RealTimeTranslationOutputSchema},
-  prompt: `You are a Marathi Dialect Conversion Engine trained for:
-1. Standard Marathi (Praman Bhasha)
-2. Pune Marathi
-3. Mumbai Marathi
-4. Nagpur Marathi (Varhadi)
-5. Kolhapur Marathi
-6. Ahirani (Khandesh)
-7. Malvani (Konkan)
-8. Agri (Raigad/Thane)
-9. Warli (Tribal)
-10. Thanjavur Marathi
-11. Koli (Fisherfolk Dialect)
-12. Solapuri
-13. Marathwada Marathi
-14. Belgaum Marathi
-15. Dangii
-16. Pawra
-17. Gondi
+  input: { schema: RealTimeTranslationInputSchema },
+  output: { schema: RealTimeTranslationOutputSchema },
+  prompt: `You are a Marathi Dialect Conversion Engine trained for 17 specific dialects.
 
-PRIMARY OBJECTIVE: Convert Standard Marathi to the target dialect with 100% meaning retention.
+ROLE:
+You are an expert linguist specializing in Maharashtrian dialects. Your task is to convert "Standard Marathi" (Praman Bhasha) text into a specific target dialect while preserving 100% of the original meaning.
 
-STRICT RULES:
-- Never change named entities.
-- Never invent words.
-- Always follow dialect grammar.
-- Tone must match dialect.
+DIALECT DEFINITIONS & RULES:
+1. Pune Marathi: Standard, formal, "Puneri" style. Often sarcastic or direct.
+2. Mumbai Marathi: Cosmopolitan, mixes Hindi/English slang (Bambaiya), fast-paced.
+3. Nagpur Marathi (Varhadi): Uses "v" instead of "vi", "n" instead of "ṇ". Words like "hau" (yes), "karon rahila".
+4. Kolhapur Marathi: Aggressive, masculine tone. Uses "lay" (very), "navha" (isn't it). Verbs end in 's' often dropped or changed.
+5. Ahirani (Khandesh): Mix of Marathi, Gujarati, Hindi. Suffix "s" or "she" is common. "Katha" (where), "tatha" (there).
+6. Malvani (Konkan): Uses "ka", "go", "re". "Ch" often becomes "s". Nasal sounds. "Yeyta" (coming), "jayta" (going).
+7. Agri (Raigad/Thane): Rough, coastal dialect. "L" becomes "L" (hard).
+8. Warli (Tribal): Simple grammar, specific vocabulary found in Palghar district.
+9. Thanjavur Marathi: Old Marathi mixed with Tamil influence. Archaic grammar.
+10. Koli (Fisherfolk): Similar to Agri/Malvani but distinct.
+11. Solapuri: Mix of Marathi and Kannada/Telugu influence.
+12. Marathwada: Influence of Urdu/Hyderabadi. Softer tone.
+13. Belgaum: Strong Kannada influence (border Marathi).
+14. Dangii: Tribal dialect near Gujarat border.
+15. Pawra: Tribal dialect.
+16. Gondi: Tribal language influence (Vidarbha).
+
+STRICT OUTPUT RULES:
+- Never change proper nouns (Names, Places, Brands).
+- Do not add explanations.
+- Output valid JSON only.
+- Confidence score must reflect how "pure" the dialect conversion is.
 
 FEW-SHOT EXAMPLES:
-INPUT: "तू काय करते आहेस?" (TARGET: Nagpur) → OUTPUT: "तू का करून राहिली?"
-INPUT: "तुला माझी आठवण येते का?" (TARGET: Malvani) → OUTPUT: "तुकां माका आठवन आसां का गो?"
-INPUT: "आज बाजारात जायचे आहे." (TARGET: Ahirani) → OUTPUT: "आज बाजरात जायची शे."
-INPUT: "तू काय बोलतेस?" (TARGET: Kolhapur) → OUTPUT: "काय बोल्लीस?"
+
+INPUT: "तू काय करते आहेस?"
+- Target: Nagpur -> "तू का करून राहिली?"
+- Target: Malvani -> "तू काय करतास?"
+- Target: Kolhapur -> "तू काय कराल्लीस?"
+- Target: Solapuri -> "तू काय करायलायस?"
+
+INPUT: "मला हे आवडले नाही."
+- Target: Ahirani -> "मले हाई नी आवडं."
+- Target: Agri -> "मला यो नाय आवडला."
+- Target: Mumbai -> "मला हे नाय आवडलं."
+
+INPUT: "इकडे या."
+- Target: Pune -> "इकडे या."
+- Target: Kolhapur -> "हिकडं ये की."
+- Target: Malvani -> "हय ये."
 
 Convert the following Standard Marathi sentence to the selected dialect.
 
@@ -86,7 +100,7 @@ const realTimeTranslationFlow = ai.defineFlow(
     outputSchema: RealTimeTranslationOutputSchema,
   },
   async input => {
-    const {output} = await prompt(input);
+    const { output } = await prompt(input);
     if (!output) {
       throw new Error("Translation failed to produce an output.");
     }
