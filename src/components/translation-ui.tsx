@@ -84,7 +84,7 @@ export default function TranslationUI() {
   const { toast } = useToast();
 
   const [inputText, setInputText] = useState('');
-  const [dialect, setDialect] = useState<Dialect>('pune');
+  const [dialect, setDialect] = useState<Dialect>('standard');
   const formRef = useRef<HTMLFormElement>(null);
   const [isListening, setIsListening] = useState(false);
   const [micStatus, setMicStatus] = useState<'idle' | 'starting' | 'listening' | 'processing'>('idle');
@@ -452,7 +452,7 @@ export default function TranslationUI() {
                     <SelectValue placeholder="Select Dialect" />
                   </SelectTrigger>
                   <SelectContent align="center" className="min-w-[200px]">
-                    {dialects.filter(d => d.value !== 'standard').map(d => (
+                    {dialects.map(d => (
                       <SelectItem key={d.value} value={d.value} className="text-base justify-center">
                         {d.label}
                       </SelectItem>
