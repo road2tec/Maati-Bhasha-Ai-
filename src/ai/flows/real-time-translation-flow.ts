@@ -36,6 +36,7 @@ const prompt = ai.definePrompt({
   name: 'realTimeTranslationPrompt',
   input: { schema: RealTimeTranslationInputSchema },
   output: { schema: RealTimeTranslationOutputSchema },
+  config: { temperature: 0.7 },
   prompt: `You are a world-class Marathi Dialect Linguist. Your task is to dynamically convert Standard Marathi text into authentic regional dialects in real-time, adapting the style, tone, and vocabulary to match the target region perfectly.
 
 LINGUISTIC STYLE GUIDELINES (Use these to inform your translation):
@@ -84,32 +85,6 @@ IMPORTANT:
 - Ensure the output flows naturally as if spoken by a native of that region.
 
 
-## MALVANI (मालवणी/कोकण)
-- Heavy nasal sounds
-- "च" often becomes "स"
-- Add "गो", "रे", "का" for emphasis
-- "येतो" → "येयता", "जातो" → "जायता"
-- Coastal, rhythmic tone
-- Example: "तुला माझी आठवण येते का?" → "तुकां माका आठवन आसां का गो?"
-
-## AHIRANI (अहिराणी/खानदेश)
-- Mix of Marathi + Gujarati + Hindi
-- Suffix "स" or "शे" is common
-- "कुठे" → "कठा", "तिथे" → "तथा"
-- Example: "आज बाजारात जायचे आहे" → "आज बाजरात जायची शे"
-
-## MARATHWADA (मराठवाडी)
-- Urdu/Hyderabadi influence
-- Softer, polite tone
-- Use more Persian/Urdu loanwords
-
-## SOLAPURI (सोलापुरी)
-- Kannada/Telugu influence
-- Blend of border languages
-
-## BELGAUM (बेळगावी)
-- Strong Kannada influence
-- Border Marathi characteristics
 
 ## STANDARD MARATHI (प्रमाण भाषा)
 - **Style**: Formal, grammatically correct, "Textbook" or "News Anchor" Marathi.
