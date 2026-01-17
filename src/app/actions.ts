@@ -34,25 +34,18 @@ export async function translateAction(prevState: any, formData: FormData) {
 
     const { text, dialect } = validatedFields.data;
 
-    if (dialect === 'standard') {
-       return {
-        type: 'success' as const,
-        message: 'Translation successful.',
-        translatedText: text,
-        appliedRules: [],
-        confidence: 1,
-      };
-    }
+    // if (dialect === 'standard') block removed to allow AI translation for Standard Marathi
+
 
     // 1. Apply rule-based transformations
     const { transformedText: ruleBasedText, appliedRules } = applyRules(text, dialect);
-    
+
     // 2. Refine with Gemini using the real-time flow
     const result = await realTimeTranslation({
       text: ruleBasedText,
       dialect: dialect,
     });
-    
+
     return {
       type: 'success' as const,
       message: 'Translation successful.',
@@ -77,29 +70,29 @@ const chatbotSchema = z.object({
 });
 
 export async function chatbotAction(message: string) {
-    try {
-        const validatedFields = chatbotSchema.safeParse({ message });
+  try {
+    const validatedFields = chatbotSchema.safeParse({ message });
 
-        if (!validatedFields.success) {
-            return {
-                type: 'error' as const,
-                message: 'Invalid input.',
-            };
-        }
-
-        const { message: userMessage } = validatedFields.data;
-        const result = await chatbot({ message: userMessage });
-
-        return {
-            type: 'success' as const,
-            message: result.response,
-        };
-
-    } catch (error) {
-        console.error('Chatbot error:', error);
-        return {
-            type: 'error' as const,
-            message: 'An unexpected error occurred.',
-        };
+    if (!validatedFields.success) {
+      return {
+        type: 'error' as const,
+        message: 'Invalid input.',
+      };
     }
+
+    const { message: userMessage } = validatedFields.data;
+    const result = await chatbot({ message: userMessage });
+
+    return {
+      type: 'success' as const,
+      message: result.response,
+    };
+
+  } catch (error) {
+    console.error('Chatbot error:', error);
+    return {
+      type: 'error' as const,
+      message: 'An unexpected error occurred.',
+    };
+  }
 }
