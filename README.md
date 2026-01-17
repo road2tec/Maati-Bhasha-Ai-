@@ -145,6 +145,28 @@ You should see a JSON response confirming the DB connection. If it fails, check 
 
 ---
 
+## Troubleshooting Connection Issues (Windows/Corporate Networks)
+
+If you see an error like `querySrv ECONNREFUSED` on Windows, it means your network is blocking the DNS lookup for the MongoDB SRV record.
+
+**Fix 1: Whitelist your IP in MongoDB Atlas**
+1. Go to Network Access in Atlas.
+2. Add your current IP (or 0.0.0.0/0 for testing).
+
+**Fix 2: Use the Standard Connection String (Recommend)**
+This bypasses the SRV lookup entirely.
+1. Go to Atlas Dashboard > Database > Connect > Drivers.
+2. Select **Node.js** driver.
+3. Look for "Standard connection string" (select an older Node.js version like 2.2.12 if needed to see it).
+4. It should look like:
+   `mongodb://<username>:<password>@cluster0-shard-00-00.mongodb.net:27017,cluster0-shard-00-01.mongodb.net:27017,.../?ssl=true&replicaSet=atlas-xxx&authSource=admin&retryWrites=true&w=majority`
+5. Update your `.env` file with this new uri.
+
+**Fix 3: Change DNS Server**
+1. Change your computer's DNS to Google (8.8.8.8) or Cloudflare (1.1.1.1).
+
+---
+
 ## License
 
 This project does not include a license by default. Add one if you plan to open-source it.
