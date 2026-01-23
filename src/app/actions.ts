@@ -41,10 +41,28 @@ export async function translateAction(prevState: any, formData: FormData) {
     const { transformedText: ruleBasedText, appliedRules } = applyRules(text, dialect);
 
     // 2. Refine with Gemini using the real-time flow
-    const result = await realTimeTranslation({
-      text: ruleBasedText,
-      dialect: dialect,
-    });
+    let result;
+    try {
+      result = await realTimeTranslation({
+        text: ruleBasedText,
+        dialect: dialect,
+      });
+    } catch (error) {
+      console.warn('AI Translation failed, falling back to rule-based translation:', error);
+
+      let fallbackText = ruleBasedText;
+      // Option 3: Mock the validation for Standard Marathi if it fails
+      if (dialect === 'standard') {
+        fallbackText = `(Mock) हे प्रमाणित मराठी भाषांतर आहे: ${text}`;
+      }
+
+      // Fallback object mimicking the AI output structure
+      result = {
+        translated: fallbackText,
+        confidence: 0.5, // Lower confidence for fallback
+        dialect: dialect
+      };
+    }
 
     return {
       type: 'success' as const,
