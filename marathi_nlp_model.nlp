@@ -9296,3 +9296,5423 @@
     }
   ]
 }
+{
+  "dataset_info": {
+    "name": "Comprehensive Marathi Dialect Corpus",
+    "version": "4.2.0",
+    "description": "Multi-dialect parallel corpus for Standard Marathi to 17 regional variations.",
+    "total_entries": 535,
+    "license": "CC-BY-4.0"
+  },
+  "dialect_patterns": {
+    "standard_marathi": { "region": "Maharashtra (General)", "grammar": "Standard" },
+    "pune_marathi": { "region": "Pune", "marker": "Direct, slight truncation (Kuthe -> Kuth)" },
+    "mumbai_marathi": { "region": "Mumbai", "marker": "Cosmopolitan, Hindi influence, Slang (Kay -> Kay re)" },
+    "nagpur_marathi": { "region": "Vidarbha", "marker": "Varhadi (Mala -> Male, Ahe -> Ahe, Rahilo -> Rahilo)" },
+    "kolhapur_marathi": { "region": "Kolhapur", "marker": "Aggressive affection (Lay, Rav, Gadi -> Gadhya)" },
+    "ahirani_khandeshi": { "region": "Khandesh", "marker": "Katha (Where), She (Is), Una (Came)" },
+    "malvani_konkani": { "region": "Sindhudurg", "marker": "Khay (Where), Mare, Illay, Gelay" },
+    "agri_koli": { "region": "Raigad/Thane", "marker": "L instead of N/L, 'ay' endings" },
+    "warli": { "region": "Palghar Tribal", "marker": "Simpler verb forms, 'h' endings" },
+    "thanjavur_marathi": { "region": "Tamil Nadu", "marker": "Archaic 17th century grammar, Dravidian syntax influence" },
+    "koli_fisherfolk": { "region": "Coastal", "marker": "Nasal sounds, ocean vocabulary" },
+    "solapuri": { "region": "Solapur", "marker": "Kannada influence, respectful 'Ji', plural verbs for singular" },
+    "marathwada": { "region": "Latur/Nanded", "marker": "Hyderabadi influence, 'Lev' endings" },
+    "belgaum": { "region": "Karnataka Border", "marker": "Heavy Kannada loanwords, distinct intonation" },
+    "dangii": { "region": "Gujarat Border", "marker": "Tribal blend with Gujarati" },
+    "pawra": { "region": "Satpuda", "marker": "Tribal dialect" },
+    "gondi_vidarbha": { "region": "Gadchiroli", "marker": "Dravidian family, distinct vocabulary" }
+  },
+  "training_data": [
+    {
+      "source_text": "तू कुठे चालला आहेस?",
+      "target_text": "तू कुठे चाललायस?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 0.99,
+      "id": "pun_001"
+    },
+    {
+      "source_text": "तुझे नाव काय आहे?",
+      "target_text": "तुझं नाव काय आहे?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 0.99,
+      "id": "pun_002"
+    },
+    {
+      "source_text": "जेवण झाले का?",
+      "target_text": "जेवण झालं का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 0.99,
+      "id": "pun_003"
+    },
+    {
+      "source_text": "मला हे आवडत नाही.",
+      "target_text": "मला हे आवडत नाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 0.98,
+      "id": "pun_004"
+    },
+    {
+      "source_text": "इकडे ये.",
+      "target_text": "इकडं ये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 0.98,
+      "id": "pun_005"
+    },
+    {
+      "source_text": "तू काय करतोस?",
+      "target_text": "काय करतोय तू?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.97,
+      "id": "mum_001"
+    },
+    {
+      "source_text": "तू कुठे चालला आहेस?",
+      "target_text": "कुठे चाललाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.97,
+      "id": "mum_002"
+    },
+    {
+      "source_text": "बस लवकर.",
+      "target_text": "चल बस लवकर.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.96,
+      "id": "mum_003"
+    },
+    {
+      "source_text": "त्रास देऊ नकोस.",
+      "target_text": "डोक्याला ताप नको देऊ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.95,
+      "id": "mum_004"
+    },
+    {
+      "source_text": "तुला समजले का?",
+      "target_text": "समजलं का तुला?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.96,
+      "id": "mum_005"
+    },
+    {
+      "source_text": "तू कुठे चालला आहेस?",
+      "target_text": "तू कुठं चालला?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_001"
+    },
+    {
+      "source_text": "मला पाणी दे.",
+      "target_text": "मले पाणी दे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "nag_002"
+    },
+    {
+      "source_text": "मी येत आहे.",
+      "target_text": "मी येऊन राहिलो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_003"
+    },
+    {
+      "source_text": "तुला काय पाहिजे?",
+      "target_text": "तुले काय पाहिजे?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "nag_004"
+    },
+    {
+      "source_text": "हे माझे घर आहे.",
+      "target_text": "हे माझं घर आहे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.97,
+      "id": "nag_005"
+    },
+    {
+      "source_text": "हो, मी बरोबर आहे.",
+      "target_text": "हाव, मी बरोबर आहे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_006"
+    },
+    {
+      "source_text": "तू खूप बोलतोस.",
+      "target_text": "तू लई बोलतो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.98,
+      "id": "kol_001"
+    },
+    {
+      "source_text": "काय चालले आहे?",
+      "target_text": "काय चाललंय रं गड्या?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.97,
+      "id": "kol_002"
+    },
+    {
+      "source_text": "जेवण झाले का?",
+      "target_text": "जेवलास काय रं?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.97,
+      "id": "kol_003"
+    },
+    {
+      "source_text": "इकडे ये.",
+      "target_text": "हिकडं ये की.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.96,
+      "id": "kol_004"
+    },
+    {
+      "source_text": "फार हुशार आहेस.",
+      "target_text": "लय शहाणा हाईस.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.98,
+      "id": "kol_005"
+    },
+    {
+      "source_text": "तू कुठे चालला आहेस?",
+      "target_text": "तू कथा चालना?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.99,
+      "id": "ahi_001"
+    },
+    {
+      "source_text": "तुझे नाव काय आहे?",
+      "target_text": "तना नाव काय शे?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.99,
+      "id": "ahi_002"
+    },
+    {
+      "source_text": "मला भूक लागली आहे.",
+      "target_text": "मले भूक लागनी शे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_003"
+    },
+    {
+      "source_text": "तू काय करत आहेस?",
+      "target_text": "तू काय करी राह्यना?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_004"
+    },
+    {
+      "source_text": "तो घरी गेला.",
+      "target_text": "तो घरले गया.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "ahi_005"
+    },
+    {
+      "source_text": "पाणी आण.",
+      "target_text": "पाणी आन.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_006"
+    },
+    {
+      "source_text": "लवकर ये.",
+      "target_text": "लवकर ये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "ahi_007"
+    },
+    {
+      "source_text": "तू कुठे चालला आहेस?",
+      "target_text": "तू खय चललो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.99,
+      "id": "mal_001"
+    },
+    {
+      "source_text": "तुझे नाव काय आहे?",
+      "target_text": "तुझा नाव काय हा?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.99,
+      "id": "mal_002"
+    },
+    {
+      "source_text": "मला भूक लागली आहे.",
+      "target_text": "माका भूक लागली हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_003"
+    },
+    {
+      "source_text": "तू काय म्हणतोस?",
+      "target_text": "तू काय म्हणताय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "mal_004"
+    },
+    {
+      "source_text": "तो आला नाही.",
+      "target_text": "तो इलय नाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.99,
+      "id": "mal_005"
+    },
+    {
+      "source_text": "मी जातो.",
+      "target_text": "मय जाताय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_006"
+    },
+    {
+      "source_text": "तू कुठे चालला आहेस?",
+      "target_text": "तू कुठं चाललाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.99,
+      "id": "agr_001"
+    },
+    {
+      "source_text": "जेवण झाले का?",
+      "target_text": "जेवलास का नाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.99,
+      "id": "agr_002"
+    },
+    {
+      "source_text": "तो माझा मित्र आहे.",
+      "target_text": "तो माजा दोस्त हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "agr_003"
+    },
+    {
+      "source_text": "पाऊस पडत आहे.",
+      "target_text": "पाऊस पडतोय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "agr_004"
+    },
+    {
+      "source_text": "इकडे बघ.",
+      "target_text": "हिकडं बघ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "agr_005"
+    },
+    {
+      "source_text": "तू कुठे चालला आहेस?",
+      "target_text": "तू कुठं जाताह?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.95,
+      "id": "war_001"
+    },
+    {
+      "source_text": "तू काय करत आहेस?",
+      "target_text": "तू काय करताह?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.95,
+      "id": "war_002"
+    },
+    {
+      "source_text": "मी घरी चाललो.",
+      "target_text": "मी घर जाताह.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.94,
+      "id": "war_003"
+    },
+    {
+      "source_text": "पाणी प्या.",
+      "target_text": "पाणी पी.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.96,
+      "id": "war_004"
+    },
+    {
+      "source_text": "तुझे नाव काय?",
+      "target_text": "तुझं नाव काय हाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.94,
+      "id": "war_005"
+    },
+    {
+      "source_text": "तू कसा आहेस?",
+      "target_text": "तू कसा आयेंत?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.96,
+      "id": "tnj_001"
+    },
+    {
+      "source_text": "मी जेवण केले.",
+      "target_text": "मिय सापाडू केलो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.95,
+      "id": "tnj_002"
+    },
+    {
+      "source_text": "हे माझे घर आहे.",
+      "target_text": "हे मझं घर आये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.96,
+      "id": "tnj_003"
+    },
+    {
+      "source_text": "तू खोटे बोलू नकोस.",
+      "target_text": "तू खोटा नोको सांगू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.94,
+      "id": "tnj_004"
+    },
+    {
+      "source_text": "मुलगा शाळेत गेला.",
+      "target_text": "पोरगा शाळंत गेलं.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.93,
+      "id": "tnj_005"
+    },
+    {
+      "source_text": "मासे पकडले का?",
+      "target_text": "मासे गावले का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.98,
+      "id": "kol_f_001"
+    },
+    {
+      "source_text": "समुद्र शांत आहे.",
+      "target_text": "दर्या शांत हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.97,
+      "id": "kol_f_002"
+    },
+    {
+      "source_text": "आमची होडी तिथे आहे.",
+      "target_text": "आमची बोट तिकडं हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.96,
+      "id": "kol_f_003"
+    },
+    {
+      "source_text": "वादळ येणार आहे.",
+      "target_text": "तुफान येणार हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.95,
+      "id": "kol_f_004"
+    },
+    {
+      "source_text": "तुम्ही कुठे चालला आहात?",
+      "target_text": "तुमी कुठं चाललात जी?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.97,
+      "id": "sol_001"
+    },
+    {
+      "source_text": "काय करत आहात?",
+      "target_text": "काय करालाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.97,
+      "id": "sol_002"
+    },
+    {
+      "source_text": "आम्ही गावाला चाललो.",
+      "target_text": "आम्ही गावाला चाललो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.96,
+      "id": "sol_003"
+    },
+    {
+      "source_text": "पाणी पाहिजे का?",
+      "target_text": "पाणी पायजे का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.98,
+      "id": "sol_004"
+    },
+    {
+      "source_text": "बरा आहेस का?",
+      "target_text": "बरं हाय का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.97,
+      "id": "sol_005"
+    },
+    {
+      "source_text": "तू कधी येणार आहेस?",
+      "target_text": "तू कव्हा येणार हाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.97,
+      "id": "mar_001"
+    },
+    {
+      "source_text": "मला हे समजत नाही.",
+      "target_text": "मले हे समजत नाही.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_002"
+    },
+    {
+      "source_text": "खूप छान आहे.",
+      "target_text": "लय भारी हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.99,
+      "id": "mar_003"
+    },
+    {
+      "source_text": "तू तिथे जा.",
+      "target_text": "तू तिथं जा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_004"
+    },
+    {
+      "source_text": "काय झाले?",
+      "target_text": "काय झालं?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_005"
+    },
+    {
+      "source_text": "तू जेवलास का?",
+      "target_text": "जेवण झालं का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.96,
+      "id": "bel_001"
+    },
+    {
+      "source_text": "इकडे ये.",
+      "target_text": "हिकडं ये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.95,
+      "id": "bel_002"
+    },
+    {
+      "source_text": "तू काय म्हणालास?",
+      "target_text": "तू काय म्हणालस?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.96,
+      "id": "bel_003"
+    },
+    {
+      "source_text": "मला वेळ नाही.",
+      "target_text": "मला वेळ नाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.97,
+      "id": "bel_004"
+    },
+    {
+      "source_text": "कुठे चालला?",
+      "target_text": "कोठे जावो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.90,
+      "id": "dng_001"
+    },
+    {
+      "source_text": "माझे घर तिथे आहे.",
+      "target_text": "मारो घर कोठे हाये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.89,
+      "id": "dng_002"
+    },
+    {
+      "source_text": "तू काय करतोस?",
+      "target_text": "तू काय करस?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.88,
+      "id": "dng_003"
+    },
+    {
+      "source_text": "तुम्ही कुठे जाता?",
+      "target_text": "तुमी कही जावो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.88,
+      "id": "paw_001"
+    },
+    {
+      "source_text": "काय करता?",
+      "target_text": "काय करो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.89,
+      "id": "paw_002"
+    },
+    {
+      "source_text": "जेवण झाले का?",
+      "target_text": "खाणं झालं काय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.88,
+      "id": "paw_003"
+    },
+    {
+      "source_text": "तू कुठे जातोस?",
+      "target_text": "निमा बेगा हंतोन?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "gon_001"
+    },
+    {
+      "source_text": "मी जेवण करतो.",
+      "target_text": "नाना गाटो तिनतोन.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "gon_002"
+    },
+    {
+      "source_text": "नमस्कार.",
+      "target_text": "जय सेवा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.90,
+      "id": "gon_003"
+    },
+    {
+      "source_text": "तू कसा आहेस?",
+      "target_text": "निमा बही मंदोनी?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "gon_004"
+    },
+    {
+      "source_text": "पाणी आहे का?",
+      "target_text": "येर मंदो कि?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.86,
+      "id": "gon_005"
+    },
+    {
+      "source_text": "मला काम आहे.",
+      "target_text": "मले काम आहे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_007"
+    },
+    {
+      "source_text": "तू उशीर केलास.",
+      "target_text": "तू उशीर केला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_008"
+    },
+    {
+      "source_text": "घरी चल.",
+      "target_text": "घरी चल.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "nag_009"
+    },
+    {
+      "source_text": "मला माहित नाही.",
+      "target_text": "मले माहित नाही.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "nag_010"
+    },
+    {
+      "source_text": "हे तुझे काम आहे.",
+      "target_text": "हे तुझं काम आहे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_011"
+    },
+    {
+      "source_text": "तू खोटे बोलतोस.",
+      "target_text": "तू खोटं बोलतो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_012"
+    },
+    {
+      "source_text": "कुठे गेला होतास?",
+      "target_text": "कुठं गेला होता?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_013"
+    },
+    {
+      "source_text": "मला झोप येत आहे.",
+      "target_text": "मले झोप येऊन राहिली.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "nag_014"
+    },
+    {
+      "source_text": "उद्या भेटू.",
+      "target_text": "उद्या भेटू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "nag_015"
+    },
+    {
+      "source_text": "काय विचार करतोय?",
+      "target_text": "काय विचार करून राहिला?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_016"
+    },
+    {
+      "source_text": "माझे ऐक.",
+      "target_text": "माझं ऐक.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.97,
+      "id": "kol_006"
+    },
+    {
+      "source_text": "त्रास देऊ नकोस.",
+      "target_text": "वैताग देऊ नकोस रं.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.97,
+      "id": "kol_007"
+    },
+    {
+      "source_text": "तुला मार मिळेल.",
+      "target_text": "तुला मार बसल बघ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.96,
+      "id": "kol_008"
+    },
+    {
+      "source_text": "चल जाऊया.",
+      "target_text": "चल जाऊया की.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.98,
+      "id": "kol_009"
+    },
+    {
+      "source_text": "खूप छान दिसते.",
+      "target_text": "लय भारी दिसतंय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.98,
+      "id": "kol_010"
+    },
+    {
+      "source_text": "तू काय खाल्ले?",
+      "target_text": "तू काय खायलं?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_008"
+    },
+    {
+      "source_text": "मला जाऊ दे.",
+      "target_text": "मले जाऊ दे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.99,
+      "id": "ahi_009"
+    },
+    {
+      "source_text": "तो माझा भाऊ आहे.",
+      "target_text": "तो मना भाऊ शे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.99,
+      "id": "ahi_010"
+    },
+    {
+      "source_text": "तिथे कोण आहे?",
+      "target_text": "तिठे कोण शे?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_011"
+    },
+    {
+      "source_text": "मला हे हवे आहे.",
+      "target_text": "मले हे पाहिजे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_012"
+    },
+    {
+      "source_text": "लवकर काम कर.",
+      "target_text": "लवकर काम कर.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.99,
+      "id": "ahi_013"
+    },
+    {
+      "source_text": "तू कधी आलास?",
+      "target_text": "तू कव्हय उना?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "ahi_014"
+    },
+    {
+      "source_text": "मला सांगा.",
+      "target_text": "मले सांगा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.99,
+      "id": "ahi_015"
+    },
+    {
+      "source_text": "पैसे दे.",
+      "target_text": "पैसे दे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.99,
+      "id": "ahi_016"
+    },
+    {
+      "source_text": "हे घ्या.",
+      "target_text": "हे ल्या.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "ahi_017"
+    },
+    {
+      "source_text": "काय झाले?",
+      "target_text": "काय झालो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_007"
+    },
+    {
+      "source_text": "मी तिथे गेलो होतो.",
+      "target_text": "मय थय गेलो होतो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_008"
+    },
+    {
+      "source_text": "हे खूप महाग आहे.",
+      "target_text": "हे लय महाग हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "mal_009"
+    },
+    {
+      "source_text": "पाऊस पडत आहे.",
+      "target_text": "पाऊस पडता हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "mal_010"
+    },
+    {
+      "source_text": "तू काय म्हणालास?",
+      "target_text": "तू काय म्हणलास?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_011"
+    },
+    {
+      "source_text": "माझे डोके दुखत आहे.",
+      "target_text": "माझा डोकं दुखता हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_012"
+    },
+    {
+      "source_text": "मी झोपतो.",
+      "target_text": "मय निजताय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "mal_013"
+    },
+    {
+      "source_text": "तू कधी येशील?",
+      "target_text": "तू कधी येशीत?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "mal_014"
+    },
+    {
+      "source_text": "लवकर परत ये.",
+      "target_text": "लवकर परत यो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_015"
+    },
+    {
+      "source_text": "कसा आहेस?",
+      "target_text": "कसो हा?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_016"
+    },
+    {
+      "source_text": "मला हे पाहिजे.",
+      "target_text": "मला हे हवंय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "agr_006"
+    },
+    {
+      "source_text": "तू काय खाल्ले?",
+      "target_text": "तू काय खाल्ल?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "agr_007"
+    },
+    {
+      "source_text": "माझी वाट बघ.",
+      "target_text": "माजी वाट बघ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "agr_008"
+    },
+    {
+      "source_text": "ते तुझे घर आहे का?",
+      "target_text": "ते तुजा घर हाय का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "agr_009"
+    },
+    {
+      "source_text": "आता काय करायचे?",
+      "target_text": "आता काय करायचा?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "agr_010"
+    },
+    {
+      "source_text": "चल जाऊया.",
+      "target_text": "चल जाऊया.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.99,
+      "id": "agr_011"
+    },
+    {
+      "source_text": "तो खूप चांगला आहे.",
+      "target_text": "तो लय चांगला हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "agr_012"
+    },
+    {
+      "source_text": "तू कशाला आलास?",
+      "target_text": "तू कशाला आला?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "agr_013"
+    },
+    {
+      "source_text": "मी तुला सांगितले होते.",
+      "target_text": "मी तुला सांगतला होता.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "agr_014"
+    },
+    {
+      "source_text": "विश्वास ठेव.",
+      "target_text": "विश्वास ठेव.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.99,
+      "id": "agr_015"
+    },
+    {
+      "source_text": "मला काम आहे.",
+      "target_text": "मला काम हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.95,
+      "id": "war_006"
+    },
+    {
+      "source_text": "मी शेतात जातो.",
+      "target_text": "मी शेतावर जाताह.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.94,
+      "id": "war_007"
+    },
+    {
+      "source_text": "तू कधी येशील?",
+      "target_text": "तू कवा येहिल?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.93,
+      "id": "war_008"
+    },
+    {
+      "source_text": "हे काय आहे?",
+      "target_text": "हे का हा?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.94,
+      "id": "war_009"
+    },
+    {
+      "source_text": "जेवण बनव.",
+      "target_text": "खावा बनव.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.95,
+      "id": "war_010"
+    },
+    {
+      "source_text": "तू का रडतोस?",
+      "target_text": "तू का रडताह?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.94,
+      "id": "war_011"
+    },
+    {
+      "source_text": "सकाळी लवकर उठ.",
+      "target_text": "सकाळला लवकर उठ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.95,
+      "id": "war_012"
+    },
+    {
+      "source_text": "झाडाला पाणी घाल.",
+      "target_text": "झाडाला पाणी टाक.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.94,
+      "id": "war_013"
+    },
+    {
+      "source_text": "माझे ऐक.",
+      "target_text": "माझा ऐक.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.95,
+      "id": "war_014"
+    },
+    {
+      "source_text": "राम आला आहे.",
+      "target_text": "राम आलाह.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.95,
+      "id": "war_015"
+    },
+    {
+      "source_text": "भाजी आण.",
+      "target_text": "कायी आण.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.94,
+      "id": "tnj_006"
+    },
+    {
+      "source_text": "मला हे नको.",
+      "target_text": "मले हे नोको.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.95,
+      "id": "tnj_007"
+    },
+    {
+      "source_text": "तू काय करतोस?",
+      "target_text": "तू काय करतो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.95,
+      "id": "tnj_008"
+    },
+    {
+      "source_text": "इकडे ये.",
+      "target_text": "इकडं ये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.96,
+      "id": "tnj_009"
+    },
+    {
+      "source_text": "काम झाले का?",
+      "target_text": "काम झालं का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.96,
+      "id": "tnj_010"
+    },
+    {
+      "source_text": "जास्त बोलू नकोस.",
+      "target_text": "जास्त नोको बोलू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.95,
+      "id": "tnj_011"
+    },
+    {
+      "source_text": "आजी गोष्ट सांगते.",
+      "target_text": "आजी कथा सांगते.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.93,
+      "id": "tnj_012"
+    },
+    {
+      "source_text": "तू हुशार आहेस.",
+      "target_text": "तू हुशार आये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.95,
+      "id": "tnj_013"
+    },
+    {
+      "source_text": "मला तहान लागली.",
+      "target_text": "मले तहान लागली.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.96,
+      "id": "tnj_014"
+    },
+    {
+      "source_text": "देव तुझे भले करो.",
+      "target_text": "देव तुझं भलं करो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.96,
+      "id": "tnj_015"
+    },
+    {
+      "source_text": "मासे बाजारात नेऊ.",
+      "target_text": "मासे बाजारात नेऊ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.98,
+      "id": "kol_f_005"
+    },
+    {
+      "source_text": "आज समुद्राला भरती आहे.",
+      "target_text": "आज दर्याला भरती हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.97,
+      "id": "kol_f_006"
+    },
+    {
+      "source_text": "तू जाळे टाक.",
+      "target_text": "तू जाळ टाक.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.97,
+      "id": "kol_f_007"
+    },
+    {
+      "source_text": "खूप ऊन आहे.",
+      "target_text": "लय ऊन हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.96,
+      "id": "kol_f_008"
+    },
+    {
+      "source_text": "नारळ पाणी पी.",
+      "target_text": "नारळ पाणी पी.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.99,
+      "id": "kol_f_009"
+    },
+    {
+      "source_text": "माझी बोट नवीन आहे.",
+      "target_text": "माजी बोट नवीन हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.97,
+      "id": "kol_f_010"
+    },
+    {
+      "source_text": "तुम्ही या.",
+      "target_text": "तुमी या की.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.97,
+      "id": "sol_006"
+    },
+    {
+      "source_text": "आता काय करायचे?",
+      "target_text": "आता काय करायचं जी?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.97,
+      "id": "sol_007"
+    },
+    {
+      "source_text": "तो गेला.",
+      "target_text": "तो गेला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.98,
+      "id": "sol_008"
+    },
+    {
+      "source_text": "मला समजले.",
+      "target_text": "मला समजलं.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.99,
+      "id": "sol_009"
+    },
+    {
+      "source_text": "तुम्ही जेवलात का?",
+      "target_text": "तुम्ही जेवलात का जी?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.98,
+      "id": "sol_010"
+    },
+    {
+      "source_text": "काम झाले.",
+      "target_text": "काम झालं.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.98,
+      "id": "sol_011"
+    },
+    {
+      "source_text": "शेतकरी राबतो.",
+      "target_text": "शेतकरी कष्ट करतो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.96,
+      "id": "sol_012"
+    },
+    {
+      "source_text": "हे कोणाचे आहे?",
+      "target_text": "हे कोणाचं हाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.97,
+      "id": "sol_013"
+    },
+    {
+      "source_text": "गावी कधी जाणार?",
+      "target_text": "गावाला कवा जाणार?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.97,
+      "id": "sol_014"
+    },
+    {
+      "source_text": "येतो आम्ही.",
+      "target_text": "येतो आम्ही.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.99,
+      "id": "sol_015"
+    },
+    {
+      "source_text": "मला पैसे पाहिजेत.",
+      "target_text": "मले पैसे पाहिजे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_006"
+    },
+    {
+      "source_text": "लवकर आवर.",
+      "target_text": "जल्दी आवर.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.97,
+      "id": "mar_007"
+    },
+    {
+      "source_text": "तो खूप हुशार आहे.",
+      "target_text": "तो लय हुशार हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_008"
+    },
+    {
+      "source_text": "तू काय खात आहेस?",
+      "target_text": "तू काय खातोय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.97,
+      "id": "mar_009"
+    },
+    {
+      "source_text": "आता बस करा.",
+      "target_text": "आता बस करा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.99,
+      "id": "mar_010"
+    },
+    {
+      "source_text": "इकडे कोण आले होते?",
+      "target_text": "इकडं कोण आलं होतं?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_011"
+    },
+    {
+      "source_text": "तुला कोणी सांगितले?",
+      "target_text": "तुले कोणी सांगितलं?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_012"
+    },
+    {
+      "source_text": "मी उद्या येईन.",
+      "target_text": "मी उद्या येईन.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.99,
+      "id": "mar_013"
+    },
+    {
+      "source_text": "मला उशीर झाला.",
+      "target_text": "मले उशीर झाला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_014"
+    },
+    {
+      "source_text": "पाऊस पडत आहे.",
+      "target_text": "पाऊस पडायलाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.97,
+      "id": "mar_015"
+    },
+    {
+      "source_text": "काय रे, काय चाललेय?",
+      "target_text": "काय रं, काय चाललंय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.96,
+      "id": "bel_005"
+    },
+    {
+      "source_text": "तू जेवलास का?",
+      "target_text": "जेवण झालं काय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.96,
+      "id": "bel_006"
+    },
+    {
+      "source_text": "मला जाऊ दे.",
+      "target_text": "मला जाऊ दे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.98,
+      "id": "bel_007"
+    },
+    {
+      "source_text": "इकडे ये.",
+      "target_text": "हिकडं ये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.95,
+      "id": "bel_008"
+    },
+    {
+      "source_text": "हे काय आहे?",
+      "target_text": "हे काय हाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.97,
+      "id": "bel_009"
+    },
+    {
+      "source_text": "मला पाणी दे.",
+      "target_text": "मला पाणी दे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.99,
+      "id": "bel_010"
+    },
+    {
+      "source_text": "उद्या भेटू.",
+      "target_text": "उद्या भेटू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.99,
+      "id": "bel_011"
+    },
+    {
+      "source_text": "तू हुशार आहेस.",
+      "target_text": "तू हुशार हायस.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.97,
+      "id": "bel_012"
+    },
+    {
+      "source_text": "घरी कोण आहे?",
+      "target_text": "घरी कोण हाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.97,
+      "id": "bel_013"
+    },
+    {
+      "source_text": "काम कर.",
+      "target_text": "काम कर.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.99,
+      "id": "bel_014"
+    },
+    {
+      "source_text": "कोठे चालला?",
+      "target_text": "कही जावो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.88,
+      "id": "paw_004"
+    },
+    {
+      "source_text": "पाणी आण.",
+      "target_text": "पाणी लाव.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.87,
+      "id": "paw_005"
+    },
+    {
+      "source_text": "माझे नाव राजू आहे.",
+      "target_text": "मारो नाव राजू से.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.88,
+      "id": "paw_006"
+    },
+    {
+      "source_text": "तू काय करतोस?",
+      "target_text": "तू काय करो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.88,
+      "id": "paw_007"
+    },
+    {
+      "source_text": "घरी चल.",
+      "target_text": "घर जावो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.87,
+      "id": "paw_008"
+    },
+    {
+      "source_text": "जेवण कर.",
+      "target_text": "खाणं करो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.88,
+      "id": "paw_009"
+    },
+    {
+      "source_text": "हे काय आहे?",
+      "target_text": "हे काय से?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.89,
+      "id": "paw_010"
+    },
+    {
+      "source_text": "मला भूक लागली.",
+      "target_text": "मले भूक लागली.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.90,
+      "id": "paw_011"
+    },
+    {
+      "source_text": "तू कुठे जातोस?",
+      "target_text": "कोठे जावो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.89,
+      "id": "dng_004"
+    },
+    {
+      "source_text": "मला पाणी दे.",
+      "target_text": "मले पाणी दे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.90,
+      "id": "dng_005"
+    },
+    {
+      "source_text": "मी घरी चाललो.",
+      "target_text": "मी घर जावो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.88,
+      "id": "dng_006"
+    },
+    {
+      "source_text": "पाऊस पडत आहे.",
+      "target_text": "पाऊस पडी राहिला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.88,
+      "id": "dng_007"
+    },
+    {
+      "source_text": "तू काय खाल्ले?",
+      "target_text": "तू काय खाल्ला?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.88,
+      "id": "dng_008"
+    },
+    {
+      "source_text": "हे तुझे काम आहे.",
+      "target_text": "हे तारो काम हाये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.88,
+      "id": "dng_009"
+    },
+    {
+      "source_text": "तुझे नाव काय?",
+      "target_text": "तारो नाव काय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.89,
+      "id": "dng_010"
+    },
+    {
+      "source_text": "इकडे ये.",
+      "target_text": "हिकडे आव.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.89,
+      "id": "dng_011"
+    },
+    {
+      "source_text": "तू कुठे आहेस?",
+      "target_text": "निमा बेगा मंदोनी?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "gon_006"
+    },
+    {
+      "source_text": "मी घरी आहे.",
+      "target_text": "नाना लोन मंदोन.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "gon_007"
+    },
+    {
+      "source_text": "पाणी दे.",
+      "target_text": "येर ही.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.86,
+      "id": "gon_008"
+    },
+    {
+      "source_text": "जेवण कर.",
+      "target_text": "गाटो तिन.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "gon_009"
+    },
+    {
+      "source_text": "तू कोण आहेस?",
+      "target_text": "निमा बोर आंदोनी?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "gon_010"
+    },
+    {
+      "source_text": "मी शेतकरी आहे.",
+      "target_text": "नाना शेतकरी आंदोन.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.86,
+      "id": "gon_011"
+    },
+    {
+      "source_text": "गावाला चल.",
+      "target_text": "नार हन.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.84,
+      "id": "gon_012"
+    },
+    {
+      "source_text": "काय झाले?",
+      "target_text": "बती आयू?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.84,
+      "id": "gon_013"
+    },
+    {
+      "source_text": "खूप छान.",
+      "target_text": "बेश बेस.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.86,
+      "id": "gon_014"
+    },
+    {
+      "source_text": "आई बाबा.",
+      "target_text": "याय बा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.87,
+      "id": "gon_015"
+    }
+  ]
+}
+{
+  "model_version": "3.1",
+  "model_type": "enhanced_marathi_multidialect_nlp",
+  "last_updated": "2025-12-05T10:30:00Z",
+
+  "supported_dialects": [
+    "standard_marathi",
+    "pune_marathi",
+    "mumbai_marathi",
+    "nagpur_marathi",
+    "kolhapur_marathi",
+    "ahirani_marathi",
+    "malvani_marathi",
+    "agri_marathi",
+    "warli_marathi",
+    "thanjavur_marathi",
+    "koli_marathi",
+    "solapuri_marathi",
+    "marathwada_marathi",
+    "belgaum_marathi",
+    "dangii",
+    "pawra",
+    "gondi_vidarbha"
+  ],
+
+  "dataset": [
+
+    {
+      "id": "std_to_nagpur_001",
+      "source_text": "तुम्ही कसे आहात?",
+      "target_text": "कसा आहेस",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "category": "sentence",
+      "confidence": 0.97,
+      "type": "manual",
+      "timestamp": "2025-12-03T12:00:00Z"
+    },
+
+    {
+      "id": "std_to_pune_001",
+      "source_text": "चला घरी जाऊ.",
+      "target_text": "चल ना घरी जाऊ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "category": "sentence",
+      "confidence": 0.96,
+      "type": "manual",
+      "timestamp": "2025-12-03T12:00:01Z"
+    },
+
+    {
+      "id": "std_to_mumbai_001",
+      "source_text": "तुला काय पाहिजे?",
+      "target_text": "तुझे को क्या चाहिए?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "category": "sentence",
+      "confidence": 0.92,
+      "type": "manual",
+      "timestamp": "2025-12-03T12:00:02Z"
+    },
+
+    {
+      "id": "std_to_ahirani_001",
+      "source_text": "तू कुठे चालला आहेस?",
+      "target_text": "तू कथा चालना?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "category": "sentence",
+      "confidence": 0.98,
+      "type": "manual",
+      "timestamp": "2025-12-03T12:00:03Z"
+    },
+
+    {
+      "id": "std_to_malvani_001",
+      "source_text": "लवकर घरी ये.",
+      "target_text": "बेगीन घरा यो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "category": "sentence",
+      "confidence": 0.98,
+      "type": "manual",
+      "timestamp": "2025-12-03T12:00:04Z"
+    },
+
+    {
+      "id": "std_to_agri_001",
+      "source_text": "जेवण झाले का?",
+      "target_text": "जेवलास का नाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "category": "sentence",
+      "confidence": 0.95,
+      "type": "manual",
+      "timestamp": "2025-12-03T12:00:05Z"
+    },
+
+    {
+      "id": "std_to_warli_001",
+      "source_text": "तू कुठे जातोस?",
+      "target_text": "कुठ जाताह?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "category": "sentence",
+      "confidence": 0.90,
+      "type": "manual",
+      "timestamp": "2025-12-03T12:00:06Z"
+    },
+
+    {
+      "id": "std_to_thanjavur_001",
+      "source_text": "जेवण झाले का?",
+      "target_text": "सापाडू झाला का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "category": "sentence",
+      "confidence": 0.92,
+      "type": "manual",
+      "timestamp": "2025-12-03T12:00:07Z"
+    },
+
+    {
+      "id": "std_to_koli_001",
+      "source_text": "तू कुठे जातोस?",
+      "target_text": "तू खय जातुय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_marathi",
+      "category": "sentence",
+      "confidence": 0.94,
+      "type": "manual",
+      "timestamp": "2025-12-03T12:00:08Z"
+    },
+
+    {
+      "id": "std_to_solapuri_001",
+      "source_text": "आम्ही गावाला निघालो.",
+      "target_text": "आम्ही गावाला चाललोत.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "category": "sentence",
+      "confidence": 0.95,
+      "type": "manual",
+      "timestamp": "2025-12-03T12:00:09Z"
+    },
+
+    {
+      "id": "std_to_marathwada_001",
+      "source_text": "खूप छान दिसते.",
+      "target_text": "लय भारी दिसतंय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "category": "sentence",
+      "confidence": 0.95,
+      "type": "manual",
+      "timestamp": "2025-12-03T12:00:10Z"
+    },
+
+    {
+      "id": "std_to_belgaum_001",
+      "source_text": "कुठे निघाल_
+{
+  "dataset_continuation": {
+    "batch_id": "batch_002_expansion",
+    "total_new_entries": 215,
+    "domain": "daily_conversation_and_rural_life"
+  },
+  "training_data": [
+    {
+      "source_text": "तुला हे समजणार नाही.",
+      "target_text": "तुले हे समजना नाही.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_018"
+    },
+    {
+      "source_text": "मी उद्या गावाला जाईन.",
+      "target_text": "मी उद्या गाव ले जासू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "ahi_019"
+    },
+    {
+      "source_text": "तू काय बघतोयस?",
+      "target_text": "तू काय देखी राह्यना?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_020"
+    },
+    {
+      "source_text": "माझ्याकडे पैसे नाहीत.",
+      "target_text": "मना कडे पैसे नाही.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.99,
+      "id": "ahi_021"
+    },
+    {
+      "source_text": "तू खूप चांगला माणूस आहेस.",
+      "target_text": "तू लय चांगला माणूस शे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "ahi_022"
+    },
+    {
+      "source_text": "घरात कोण आहे?",
+      "target_text": "घरात कोण शे?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_023"
+    },
+    {
+      "source_text": "मला हे आवडले.",
+      "target_text": "मले हे आवडी गय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_024"
+    },
+    {
+      "source_text": "तू वेडा आहेस का?",
+      "target_text": "तू पागल शे का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.96,
+      "id": "ahi_025"
+    },
+    {
+      "source_text": "साखर संपली आहे.",
+      "target_text": "साखर संपनी शे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "ahi_026"
+    },
+    {
+      "source_text": "पाऊस कधी येईल?",
+      "target_text": "पाऊस कव्हय येई?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.96,
+      "id": "ahi_027"
+    },
+    {
+      "source_text": "तू जेवलास का?",
+      "target_text": "तू जेवलोस काय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.99,
+      "id": "mal_017"
+    },
+    {
+      "source_text": "मला कंटाळा आला आहे.",
+      "target_text": "माका कंटाळो इलय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_018"
+    },
+    {
+      "source_text": "हे कोणाचे आहे?",
+      "target_text": "हे कोणाचा हा?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_019"
+    },
+    {
+      "source_text": "मी तुला मदत करेन.",
+      "target_text": "मय तुका मदत करतलय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "mal_020"
+    },
+    {
+      "source_text": "इकडे येऊन बस.",
+      "target_text": "हय येवन रव.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.96,
+      "id": "mal_021"
+    },
+    {
+      "source_text": "तू काय विकत घेतले?",
+      "target_text": "तू काय विकत घेतल्या?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "mal_022"
+    },
+    {
+      "source_text": "मला घरी जायचे आहे.",
+      "target_text": "माका घरा जावचा हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_023"
+    },
+    {
+      "source_text": "माझा मित्र आजारी आहे.",
+      "target_text": "माझो दोस्त आजारी हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "mal_024"
+    },
+    {
+      "source_text": "दिवा लाव.",
+      "target_text": "दिवो लाव.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.99,
+      "id": "mal_025"
+    },
+    {
+      "source_text": "दरवाजा बंद कर.",
+      "target_text": "दार लावून घे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.96,
+      "id": "mal_026"
+    },
+    {
+      "source_text": "काय चालले आहे?",
+      "target_text": "काय चाललाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "agr_016"
+    },
+    {
+      "source_text": "तुला भूक लागली का?",
+      "target_text": "तुला भूक लागली का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "agr_017"
+    },
+    {
+      "source_text": "मी काम करतोय.",
+      "target_text": "मी काम करतोय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.99,
+      "id": "agr_018"
+    },
+    {
+      "source_text": "तू खूप उशीर केलास.",
+      "target_text": "तू लय उशीर केला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "agr_019"
+    },
+    {
+      "source_text": "पाहुणे आले आहेत.",
+      "target_text": "पावने आलेत.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.96,
+      "id": "agr_020"
+    },
+    {
+      "source_text": "लग्न कधी आहे?",
+      "target_text": "लगिन कवा हाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "agr_021"
+    },
+    {
+      "source_text": "तू खोटे बोलू नकोस.",
+      "target_text": "तू खोटा नको बोलू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "agr_022"
+    },
+    {
+      "source_text": "हे माझे गाव आहे.",
+      "target_text": "हे माजा गाव हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "agr_023"
+    },
+    {
+      "source_text": "भाजी खूप तिखट आहे.",
+      "target_text": "भाजी लय तिखट हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "agr_024"
+    },
+    {
+      "source_text": "तू तिथे का गेला होतास?",
+      "target_text": "तू तिकडं कशाला गेला होता?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.96,
+      "id": "agr_025"
+    },
+    {
+      "source_text": "तू कुठे काम करतोस?",
+      "target_text": "तू कुठं काम करताह?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.94,
+      "id": "war_016"
+    },
+    {
+      "source_text": "मी जंगलात जातो.",
+      "target_text": "मी रानात जाताह.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.95,
+      "id": "war_017"
+    },
+    {
+      "source_text": "आजारी आहेस का?",
+      "target_text": "आजारी आह का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.93,
+      "id": "war_018"
+    },
+    {
+      "source_text": "पैसे संपले.",
+      "target_text": "पैसे संपले.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.96,
+      "id": "war_019"
+    },
+    {
+      "source_text": "सूर्य मावळला.",
+      "target_text": "दीस बुडाला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.92,
+      "id": "war_020"
+    },
+    {
+      "source_text": "तू काय म्हणालास?",
+      "target_text": "तू काय बोललाह?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.94,
+      "id": "war_021"
+    },
+    {
+      "source_text": "माझे पोट भरले.",
+      "target_text": "माझा पोट भरला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.95,
+      "id": "war_022"
+    },
+    {
+      "source_text": "लहान मूल रडत आहे.",
+      "target_text": "लहान पोर रडताह.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.94,
+      "id": "war_023"
+    },
+    {
+      "source_text": "मला हे नको आहे.",
+      "target_text": "मले हे नोको.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "nag_017"
+    },
+    {
+      "source_text": "तू कधी परत येणार?",
+      "target_text": "तू कव्हा वापस येणार?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_018"
+    },
+    {
+      "source_text": "मी तुला शोधत होतो.",
+      "target_text": "मी तुले धुंडून राहिलो होतो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.97,
+      "id": "nag_019"
+    },
+    {
+      "source_text": "पाणी खूप गरम आहे.",
+      "target_text": "पाणी लई गरम आहे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "nag_020"
+    },
+    {
+      "source_text": "तू काय अभ्यास करतोयस?",
+      "target_text": "तू काय अभ्यास करून राहिला?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_021"
+    },
+    {
+      "source_text": "माझी वाट बघू नकोस.",
+      "target_text": "माझी वाट नको पाहू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_022"
+    },
+    {
+      "source_text": "मी तुला फोन केला होता.",
+      "target_text": "मी तुले फोन केला होता.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "nag_023"
+    },
+    {
+      "source_text": "चल, चहा पिऊया.",
+      "target_text": "चल, चहा पिऊन राहू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.96,
+      "id": "nag_024"
+    },
+    {
+      "source_text": "तू काय करतो आहेस?",
+      "target_text": "तू काय करून राहिला?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_025"
+    },
+    {
+      "source_text": "गाडी लवकर चालव.",
+      "target_text": "गाडी जलदी चालव.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.97,
+      "id": "nag_026"
+    },
+    {
+      "source_text": "तू वेडा आहेस का?",
+      "target_text": "तू खुळा हायस का रं?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.98,
+      "id": "kol_011"
+    },
+    {
+      "source_text": "आम्ही उद्या येऊ.",
+      "target_text": "आम्ही उद्या येतोय की.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.97,
+      "id": "kol_012"
+    },
+    {
+      "source_text": "जेवण छान झाले आहे.",
+      "target_text": "जेवण एक नंबर झालंय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.98,
+      "id": "kol_013"
+    },
+    {
+      "source_text": "तुला काय वाटते?",
+      "target_text": "तुला काय वाटतंय गड्या?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.97,
+      "id": "kol_014"
+    },
+    {
+      "source_text": "मी हे काम करणार नाही.",
+      "target_text": "मी हे काम करणार नाय बघ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.98,
+      "id": "kol_015"
+    },
+    {
+      "source_text": "इकडे लक्ष दे.",
+      "target_text": "हिकडं ध्यान दे की.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.97,
+      "id": "kol_016"
+    },
+    {
+      "source_text": "तू कुठे लपलास?",
+      "target_text": "तू कुठं दडून बसलाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.96,
+      "id": "kol_017"
+    },
+    {
+      "source_text": "तू खूप बारीक झाला आहेस.",
+      "target_text": "तू लय वाळलाय रं.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.97,
+      "id": "kol_018"
+    },
+    {
+      "source_text": "मला हे माहीत आहे.",
+      "target_text": "मले हे माहीत आये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.96,
+      "id": "tnj_016"
+    },
+    {
+      "source_text": "तू केव्हा आलास?",
+      "target_text": "तू कव्हा आलं?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.95,
+      "id": "tnj_017"
+    },
+    {
+      "source_text": "हे पुस्तक कोणाचे आहे?",
+      "target_text": "हे पुस्तक कोणाचं आये?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.96,
+      "id": "tnj_018"
+    },
+    {
+      "source_text": "मला झोप येत नाही.",
+      "target_text": "मले झोप येत नोको.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.94,
+      "id": "tnj_019"
+    },
+    {
+      "source_text": "देवावर विश्वास ठेव.",
+      "target_text": "देवावर भरवसा ठेव.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.97,
+      "id": "tnj_020"
+    },
+    {
+      "source_text": "आजी घरात आहे.",
+      "target_text": "आजी घरात आये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.98,
+      "id": "tnj_021"
+    },
+    {
+      "source_text": "मला भीती वाटते.",
+      "target_text": "मले भीती वाटते.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.98,
+      "id": "tnj_022"
+    },
+    {
+      "source_text": "मासे ताजे आहेत.",
+      "target_text": "मासे ताजे हायत.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.98,
+      "id": "kol_f_011"
+    },
+    {
+      "source_text": "उद्या मासेमारीला जाऊ.",
+      "target_text": "उद्या मासेमारीला जाऊ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.98,
+      "id": "kol_f_012"
+    },
+    {
+      "source_text": "वारा खूप जोरात आहे.",
+      "target_text": "वारा लय जोरात हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.97,
+      "id": "kol_f_013"
+    },
+    {
+      "source_text": "ही जाळी तुटली आहे.",
+      "target_text": "ही जाळ तुटली हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.96,
+      "id": "kol_f_014"
+    },
+    {
+      "source_text": "तू कुठून आलास?",
+      "target_text": "तू कुठून इलास?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.97,
+      "id": "kol_f_015"
+    },
+    {
+      "source_text": "माझ्याकडे बघ.",
+      "target_text": "माझ्याकडं बघ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.98,
+      "id": "sol_016"
+    },
+    {
+      "source_text": "तू काय म्हणालास?",
+      "target_text": "तुम्ही काय म्हणलात?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.97,
+      "id": "sol_017"
+    },
+    {
+      "source_text": "हे घ्या पाणी.",
+      "target_text": "हे घ्या पाणी.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.99,
+      "id": "sol_018"
+    },
+    {
+      "source_text": "आम्ही उद्या येऊ.",
+      "target_text": "आम्ही उद्या येतोत.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.96,
+      "id": "sol_019"
+    },
+    {
+      "source_text": "तुम्ही बसा.",
+      "target_text": "तुम्ही बसा की.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.98,
+      "id": "sol_020"
+    },
+    {
+      "source_text": "मला काही नको.",
+      "target_text": "मले काही नको.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_016"
+    },
+    {
+      "source_text": "तू कुठे लपलास?",
+      "target_text": "तू कोठं दडला?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.96,
+      "id": "mar_017"
+    },
+    {
+      "source_text": "माझे डोके दुखते.",
+      "target_text": "माझं डोकं दुखायलाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.97,
+      "id": "mar_018"
+    },
+    {
+      "source_text": "तू अभ्यास कर.",
+      "target_text": "तू अभ्यास कर.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.99,
+      "id": "mar_019"
+    },
+    {
+      "source_text": "मला भूक नाही.",
+      "target_text": "मले भूक नाही.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_020"
+    },
+    {
+      "source_text": "तू काय केलेस?",
+      "target_text": "तू काय केलस?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.96,
+      "id": "bel_015"
+    },
+    {
+      "source_text": "लवकर घरी जा.",
+      "target_text": "लवकर घरी जा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.99,
+      "id": "bel_016"
+    },
+    {
+      "source_text": "मला हे आवडत नाही.",
+      "target_text": "मला हे आवडत नाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.98,
+      "id": "bel_017"
+    },
+    {
+      "source_text": "तू कोणाचा मुलगा आहेस?",
+      "target_text": "तू कोणाचा पोरगा हायस?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.97,
+      "id": "bel_018"
+    },
+    {
+      "source_text": "मला समजत नाही.",
+      "target_text": "मला समजत नाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.98,
+      "id": "bel_019"
+    },
+    {
+      "source_text": "तू काय खात आहेस?",
+      "target_text": "तू काय खायलास?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.96,
+      "id": "bel_020"
+    },
+    {
+      "source_text": "पाणी आहे का?",
+      "target_text": "पाणी से का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.88,
+      "id": "paw_012"
+    },
+    {
+      "source_text": "मी बाजारात जातो.",
+      "target_text": "मी बाजार जावो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.87,
+      "id": "paw_013"
+    },
+    {
+      "source_text": "तू कोठे राहतोस?",
+      "target_text": "तुमी कही र्हस?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.86,
+      "id": "paw_014"
+    },
+    {
+      "source_text": "मला मदत कर.",
+      "target_text": "मले मदत करो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.89,
+      "id": "paw_015"
+    },
+    {
+      "source_text": "तू काय करतोयस?",
+      "target_text": "तू काय करस?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.88,
+      "id": "dng_012"
+    },
+    {
+      "source_text": "माझे ऐक.",
+      "target_text": "मारो आयक.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.89,
+      "id": "dng_013"
+    },
+    {
+      "source_text": "मी तुला ओळखतो.",
+      "target_text": "मी तुला ओळखस.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.87,
+      "id": "dng_014"
+    },
+    {
+      "source_text": "तू कुठे जातोस?",
+      "target_text": "निमा बेगा हंतोन?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "gon_016"
+    },
+    {
+      "source_text": "पाणी घे.",
+      "target_text": "येर ती.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.86,
+      "id": "gon_017"
+    },
+    {
+      "source_text": "जेवण झाले.",
+      "target_text": "गाटो तिंजी.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.84,
+      "id": "gon_018"
+    },
+    {
+      "source_text": "लवकर ये.",
+      "target_text": "जल्दी वाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "gon_019"
+    },
+    {
+      "source_text": "मला पैसे दे.",
+      "target_text": "नाकु रुपय हि.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.83,
+      "id": "gon_020"
+    },
+    {
+      "source_text": "तू घरी जा.",
+      "target_text": "निमा लोन हन.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "gon_021"
+    },
+    {
+      "source_text": "काय झाले आहे?",
+      "target_text": "काय झालाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.98,
+      "id": "mum_006"
+    },
+    {
+      "source_text": "जास्त शहाणपणा नको.",
+      "target_text": "जास्त दीडशहाणपणा नको करू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.97,
+      "id": "mum_007"
+    },
+    {
+      "source_text": "चल जाऊया.",
+      "target_text": "चल कटूया.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.96,
+      "id": "mum_008"
+    },
+    {
+      "source_text": "मला भूक लागली आहे.",
+      "target_text": "मला भूक लागलीये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.98,
+      "id": "mum_009"
+    },
+    {
+      "source_text": "तुझे काम झाले का?",
+      "target_text": "तुझं काम झालं का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.98,
+      "id": "mum_010"
+    },
+    {
+      "source_text": "तू कुठे राहतोस?",
+      "target_text": "तू कुठं राहतो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.98,
+      "id": "mum_011"
+    },
+    {
+      "source_text": "तो माझा मित्र आहे.",
+      "target_text": "तो माझा दोस्त आहे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.99,
+      "id": "mum_012"
+    },
+    {
+      "source_text": "तुम्ही काय करत आहात?",
+      "target_text": "तुम्ही काय करताय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 0.98,
+      "id": "pun_011"
+    }
+  ]
+}
+  {
+    "id": "std_to_nagpur_002",
+    "source_text": "तुला काय पाहिजे?",
+    "target_text": "तुला काय लागते?",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "nagpur_marathi",
+    "category": "sentence",
+    "confidence": 0.96,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:01Z"
+  },
+
+  {
+    "id": "std_to_pune_002",
+    "source_text": "आज खूप थंडी आहे.",
+    "target_text": "आज भारी थंडी आहे.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "pune_marathi",
+    "category": "sentence",
+    "confidence": 0.95,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:02Z"
+  },
+
+  {
+    "id": "std_to_mumbai_002",
+    "source_text": "मला वेळ नाही.",
+    "target_text": "मेरे पास टाइम नहीं है.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "mumbai_marathi",
+    "category": "sentence",
+    "confidence": 0.91,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:03Z"
+  },
+
+  {
+    "id": "std_to_kolhapur_001",
+    "source_text": "तो फार चांगला माणूस आहे.",
+    "target_text": "तो खूपच बरा माणूस आहे.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "kolhapur_marathi",
+    "category": "sentence",
+    "confidence": 0.94,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:04Z"
+  },
+
+  {
+    "id": "std_to_ahirani_002",
+    "source_text": "मला पाणी दे.",
+    "target_text": "मले पाणी दे.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "ahirani_marathi",
+    "category": "sentence",
+    "confidence": 0.98,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:05Z"
+  },
+
+  {
+    "id": "std_to_ahirani_003",
+    "source_text": "तुझे गाव कुठे आहे?",
+    "target_text": "तना गाव कथा शे?",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "ahirani_marathi",
+    "category": "sentence",
+    "confidence": 0.97,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:06Z"
+  },
+
+  {
+    "id": "std_to_malvani_002",
+    "source_text": "पाणी आण.",
+    "target_text": "पाणी घे.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "malvani_marathi",
+    "category": "sentence",
+    "confidence": 0.96,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:07Z"
+  },
+
+  {
+    "id": "std_to_agri_002",
+    "source_text": "तो घरी आहे.",
+    "target_text": "तो घराकडे हाय.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "agri_marathi",
+    "category": "sentence",
+    "confidence": 0.95,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:08Z"
+  },
+
+  {
+    "id": "std_to_warli_002",
+    "source_text": "आम्ही जंगलात जातो.",
+    "target_text": "आमी जंगल जाताह.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "warli_marathi",
+    "category": "sentence",
+    "confidence": 0.89,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:09Z"
+  },
+
+  {
+    "id": "std_to_thanjavur_002",
+    "source_text": "मला भाजी पाहिजे.",
+    "target_text": "मले कायी पायजे.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "thanjavur_marathi",
+    "category": "sentence",
+    "confidence": 0.92,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:10Z"
+  },
+
+  {
+    "id": "std_to_koli_002",
+    "source_text": "आज मासे मिळाले.",
+    "target_text": "आज मासे मिळाले हव.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "koli_marathi",
+    "category": "sentence",
+    "confidence": 0.94,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:11Z"
+  },
+
+  {
+    "id": "std_to_solapuri_002",
+    "source_text": "आज काम खूप आहे.",
+    "target_text": "आज काम फार हाय जी.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "solapuri_marathi",
+    "category": "sentence",
+    "confidence": 0.95,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:12Z"
+  },
+
+  {
+    "id": "std_to_marathwada_002",
+    "source_text": "मला भूक लागली आहे.",
+    "target_text": "मले भूक लागली हाय.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "marathwada_marathi",
+    "category": "sentence",
+    "confidence": 0.96,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:13Z"
+  },
+
+  {
+    "id": "std_to_belgaum_002",
+    "source_text": "तो इकडे ये.",
+    "target_text": "तो हिकडं ये.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "belgaum_marathi",
+    "category": "sentence",
+    "confidence": 0.93,
+    "type": "manual",
+    "timestamp": "2025-12-05T11:00:1
+  }
+
+  "dataset_continuation": {
+    "batch_id": "batch_003_expansion",
+    "total_new_entries": 160,
+    "focus": "complex_sentences_and_vocabulary"
+  },
+  "training_data": 
+    {
+      "source_text": "तू हे काम करू नकोस.",
+      "target_text": "तू हा काम नको करू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_028"
+    },
+    {
+      "source_text": "आम्ही शेतात चाललो.",
+      "target_text": "आम्ही वावर मा चालना.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "ahi_029"
+    },
+    {
+      "source_text": "तुला किती पैसे पाहिजेत?",
+      "target_text": "तुले किती पैसे पाहिजे?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_030"
+    },
+    {
+      "source_text": "तू खोटे का बोलतो?",
+      "target_text": "तू लबाडी का लवस?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.96,
+      "id": "ahi_031"
+    },
+    {
+      "source_text": "माझे पोट दुखते.",
+      "target_text": "मना पोट दुखी राह्यना.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "ahi_032"
+    },
+    {
+      "source_text": "गाडी हळू चालव.",
+      "target_text": "गाडी हळू चालव.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.99,
+      "id": "ahi_033"
+    },
+    {
+      "source_text": "मी तुला बघितले.",
+      "target_text": "मी तुले देखनं.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.95,
+      "id": "ahi_034"
+    },
+    {
+      "source_text": "तू इथे बस.",
+      "target_text": "तू इठे बयस.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_035"
+    },
+    {
+      "source_text": "उद्या पाऊस पडेल.",
+      "target_text": "उद्या पाऊस पडतलो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "mal_027"
+    },
+    {
+      "source_text": "मला हे आवडत नाही.",
+      "target_text": "माका हे आवडाना नाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_028"
+    },
+    {
+      "source_text": "तू जेवण बनव.",
+      "target_text": "तू जेवण रांध.",
+      "source_dialect": "standard_
+    }
+{
+  "dataset_continuation": {
+    "batch_id": "batch_003_expansion",
+    "total_new_entries": 160,
+    "focus": "complex_sentences_and_vocabulary"
+  },
+  "training_data": [
+    {
+      "source_text": "तू हे काम करू नकोस.",
+      "target_text": "तू हा काम नको करू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_028"
+    },
+    {
+      "source_text": "आम्ही शेतात चाललो.",
+      "target_text": "आम्ही वावर मा चालना.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "ahi_029"
+    },
+    {
+      "source_text": "तुला किती पैसे पाहिजेत?",
+      "target_text": "तुले किती पैसे पाहिजे?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_030"
+    },
+    {
+      "source_text": "तू खोटे का बोलतो?",
+      "target_text": "तू लबाडी का लवस?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.96,
+      "id": "ahi_031"
+    },
+    {
+      "source_text": "माझे पोट दुखते.",
+      "target_text": "मना पोट दुखी राह्यना.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "ahi_032"
+    },
+    {
+      "source_text": "गाडी हळू चालव.",
+      "target_text": "गाडी हळू चालव.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.99,
+      "id": "ahi_033"
+    },
+    {
+      "source_text": "मी तुला बघितले.",
+      "target_text": "मी तुले देखनं.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.95,
+      "id": "ahi_034"
+    },
+    {
+      "source_text": "तू इथे बस.",
+      "target_text": "तू इठे बयस.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "ahi_035"
+    },
+    {
+      "source_text": "उद्या पाऊस पडेल.",
+      "target_text": "उद्या पाऊस पडतलो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "mal_027"
+    },
+    {
+      "source_text": "मला हे आवडत नाही.",
+      "target_text": "माका हे आवडाना नाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_028"
+    },
+    {
+      "source_text": "तू जेवण बनव.",
+      "target_text": "तू जेवण रांध.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.96,
+      "id": "mal_029"
+    },
+    {
+      "source_text": "तुझा मोबाईल दे.",
+      "target_text": "तुझो मोबाईल दी.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_030"
+    },
+    {
+      "source_text": "ते खूप लांब आहे.",
+      "target_text": "ते लय लांब हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "mal_031"
+    },
+    {
+      "source_text": "कपडे धुवून घे.",
+      "target_text": "कपडे धुवून घे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.99,
+      "id": "mal_032"
+    },
+    {
+      "source_text": "तू का हसतोस?",
+      "target_text": "तू क्या हसताय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "mal_033"
+    },
+    {
+      "source_text": "घरात कोणी नाही.",
+      "target_text": "घरात कोनी नाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "agr_026"
+    },
+    {
+      "source_text": "हे काम आताच कर.",
+      "target_text": "हे काम आताच कर.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.99,
+      "id": "agr_027"
+    },
+    {
+      "source_text": "तू कुठून आलास?",
+      "target_text": "तू कुठून आला?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "agr_028"
+    },
+    {
+      "source_text": "मला पैसे दे.",
+      "target_text": "मला पैसं दे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "agr_029"
+    },
+    {
+      "source_text": "तुला काय झाले?",
+      "target_text": "तुला काय झाला?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "agr_030"
+    },
+    {
+      "source_text": "ती माझी बहिण आहे.",
+      "target_text": "ती माजा भिन हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.96,
+      "id": "agr_031"
+    },
+    {
+      "source_text": "मी तुला मारिन.",
+      "target_text": "मी तुला हानेन.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.95,
+      "id": "agr_032"
+    },
+    {
+      "source_text": "तू वेडा झालास का?",
+      "target_text": "तू वेडा झालाय का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "agr_033"
+    },
+    {
+      "source_text": "मला हे माहित नव्हते.",
+      "target_text": "मले हे माहित नव्हतं.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_027"
+    },
+    {
+      "source_text": "माझी चप्पल कुठे आहे?",
+      "target_text": "माझी चप्पल कुठं आहे?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_028"
+    },
+    {
+      "source_text": "तू अभ्यास केलास का?",
+      "target_text": "तू अभ्यास केला का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.97,
+      "id": "nag_029"
+    },
+    {
+      "source_text": "तो खूप रडत होता.",
+      "target_text": "तो लई रडून राहिला होता.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_030"
+    },
+    {
+      "source_text": "इकडे येऊन बस.",
+      "target_text": "इकडं येऊन बस.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "nag_031"
+    },
+    {
+      "source_text": "तुम्ही काय म्हणता?",
+      "target_text": "तुम्ही काय म्हणून राहिले?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_032"
+    },
+    {
+      "source_text": "मला चक्कर येत आहे.",
+      "target_text": "मले चक्कर येऊन राहिली.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "nag_033"
+    },
+    {
+      "source_text": "रस्ता खूप खराब आहे.",
+      "target_text": "रस्ता लय खराब हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.98,
+      "id": "kol_019"
+    },
+    {
+      "source_text": "गाडी थांबव.",
+      "target_text": "गाडी थांबव की.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.97,
+      "id": "kol_020"
+    },
+    {
+      "source_text": "तू काय करतोयस?",
+      "target_text": "काय करायलायस रं?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.97,
+      "id": "kol_021"
+    },
+    {
+      "source_text": "पाणी आण.",
+      "target_text": "पाणी घेऊन ये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.98,
+      "id": "kol_022"
+    },
+    {
+      "source_text": "तू गप्प बस.",
+      "target_text": "तू गप रं.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.96,
+      "id": "kol_023"
+    },
+    {
+      "source_text": "आम्ही निघालो.",
+      "target_text": "आम्ही निघालोय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.97,
+      "id": "kol_024"
+    },
+    {
+      "source_text": "भात वाढ.",
+      "target_text": "भात वाढ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.99,
+      "id": "tnj_023"
+    },
+    {
+      "source_text": "भाजी आण.",
+      "target_text": "कायी आण.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.96,
+      "id": "tnj_024"
+    },
+    {
+      "source_text": "तू का रडतोस?",
+      "target_text": "तू का रडतो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.98,
+      "id": "tnj_025"
+    },
+    {
+      "source_text": "मला हे काम करायचे आहे.",
+      "target_text": "मले हे काम करायचं आये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.97,
+      "id": "tnj_026"
+    },
+    {
+      "source_text": "तू कोठे गेला होतास?",
+      "target_text": "तू कुठं गेला होता?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.98,
+      "id": "tnj_027"
+    },
+    {
+      "source_text": "खूप पाऊस पडतोय.",
+      "target_text": "लय पाऊस पडतोय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.97,
+      "id": "sol_021"
+    },
+    {
+      "source_text": "तुम्ही कशाला त्रास देता?",
+      "target_text": "तुम्ही कशापायी त्रास देता?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.98,
+      "id": "sol_022"
+    },
+    {
+      "source_text": "लवकर चला.",
+      "target_text": "लवकर चला की.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.98,
+      "id": "sol_023"
+    },
+    {
+      "source_text": "हे माझे शेत आहे.",
+      "target_text": "हे माझं रान हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.96,
+      "id": "sol_024"
+    },
+    {
+      "source_text": "मी तुला बघून घेईन.",
+      "target_text": "मी तुला बघून घेईन.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.99,
+      "id": "sol_025"
+    },
+    {
+      "source_text": "जास्त बोलू नकोस.",
+      "target_text": "जास्त बडबडू नको.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.96,
+      "id": "bel_021"
+    },
+    {
+      "source_text": "मला हे नको आहे.",
+      "target_text": "मला हे नको हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.97,
+      "id": "bel_022"
+    },
+    {
+      "source_text": "तू काय करतोयस?",
+      "target_text": "तू काय करतुयास?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.95,
+      "id": "bel_023"
+    },
+    {
+      "source_text": "घरी कोण आहे?",
+      "target_text": "घरी कोण हाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.98,
+      "id": "bel_024"
+    },
+    {
+      "source_text": "मला पाणी पाहिजे.",
+      "target_text": "मले पाणी पाहिजे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.90,
+      "id": "paw_016"
+    },
+    {
+      "source_text": "तू कोठे जातोयस?",
+      "target_text": "तू कही जायेल से?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.88,
+      "id": "paw_017"
+    },
+    {
+      "source_text": "मी घरी येतो.",
+      "target_text": "मी घर आवो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.89,
+      "id": "paw_018"
+    },
+    {
+      "source_text": "तू काय खाल्ले?",
+      "target_text": "तू काय खाधल?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.87,
+      "id": "paw_019"
+    },
+    {
+      "source_text": "माझे डोके दुखत आहे.",
+      "target_text": "मारो डोकं दुखी राह्यला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.88,
+      "id": "dng_015"
+    },
+    {
+      "source_text": "तू कोणाचा मुलगा आहेस?",
+      "target_text": "तू कोनो पोर हाये?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.88,
+      "id": "dng_016"
+    },
+    {
+      "source_text": "मला पैसे पाहिजेत.",
+      "target_text": "मले पैसा पाहिजे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.90,
+      "id": "dng_017"
+    },
+    {
+      "source_text": "तू काय बघतोयस?",
+      "target_text": "निमा बती हुडकी?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "gon_022"
+    },
+    {
+      "source_text": "मी बाजारात जातो.",
+      "target_text": "नाना बाजार हंतोन.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.86,
+      "id": "gon_023"
+    },
+    {
+      "source_text": "पाणी आहे.",
+      "target_text": "येर मंदो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.87,
+      "id": "gon_024"
+    },
+    {
+      "source_text": "हे काय आहे?",
+      "target_text": "इद बती आंदो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "gon_025"
+    },
+    {
+      "source_text": "तू कोठे राहतोस?",
+      "target_text": "तू कुठं राहताह?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.94,
+      "id": "war_024"
+    },
+    {
+      "source_text": "मी नदीवर जातो.",
+      "target_text": "मी नदीवर जाताह.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.95,
+      "id": "war_025"
+    },
+    {
+      "source_text": "पक्षी उडत आहे.",
+      "target_text": "पाखरू उडताह.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.93,
+      "id": "war_026"
+    },
+    {
+      "source_text": "तू झोपला आहेस का?",
+      "target_text": "तू निजला आह का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.94,
+      "id": "war_027"
+    },
+    {
+      "source_text": "तू कधी भेटशील?",
+      "target_text": "तू कव्हा भेटनार?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_021"
+    },
+    {
+      "source_text": "पाणी गरम कर.",
+      "target_text": "पाणी गरम कर.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.99,
+      "id": "mar_022"
+    },
+    {
+      "source_text": "तू खोटे बोलू नकोस.",
+      "target_text": "तू खोटं नको बोलू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_023"
+    },
+    {
+      "source_text": "ही माझी गाडी आहे.",
+      "target_text": "ही माझी गाडी हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_024"
+    },
+    {
+      "source_text": "इकडे कोण आहे?",
+      "target_text": "इकडं कोण हाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_025"
+    },
+    {
+      "source_text": "तू खूप चांगला आहेस.",
+      "target_text": "तू लय चांगला हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "mar_026"
+    },
+    {
+      "source_text": "तू हे करू शकतोस.",
+      "target_text": "तू हे करू शकतो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 0.99,
+      "id": "pun_012"
+    },
+    {
+      "source_text": "मला तिथे जायचे नाही.",
+      "target_text": "मला तिथं जायचं नाही.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 0.98,
+      "id": "pun_013"
+    },
+    {
+      "source_text": "ते तुझे पुस्तक आहे का?",
+      "target_text": "ते तुझं पुस्तक आहे का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 0.99,
+      "id": "pun_014"
+    },
+    {
+      "source_text": "तू गप्प बस.",
+      "target_text": "तू गप्प बस.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 1.00,
+      "id": "pun_015"
+    },
+    {
+      "source_text": "तू खूप उशीर केलास.",
+      "target_text": "तू खूप उशीर केलास.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 1.00,
+      "id": "pun_016"
+    },
+    {
+      "source_text": "तू कुठे निघाला आहेस?",
+      "target_text": "तू कुठं निघालाय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.98,
+      "id": "mum_014"
+    },
+    {
+      "source_text": "ते माझे काम नाही.",
+      "target_text": "ते माझं काम नाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.98,
+      "id": "mum_015"
+    },
+    {
+      "source_text": "तू वेडा आहेस का?",
+      "target_text": "तू पागल आहेस का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.98,
+      "id": "mum_016"
+    },
+    {
+      "source_text": "जाऊ दे ना.",
+      "target_text": "जाऊ दे ना.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 1.00,
+      "id": "mum_017"
+    },
+    {
+      "source_text": "तू काय करतोयस?",
+      "target_text": "काय करतोय तू?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.97,
+      "id": "mum_018"
+    }
+  ]
+}
+[
+  {
+    "id": "std_to_nagpur_003",
+    "source_text": "आज काम खूप आहे.",
+    "target_text": "आज काम बरंच आहे.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "nagpur_marathi",
+    "category": "sentence",
+    "confidence": 0.95,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:01Z"
+  },
+  {
+    "id": "std_to_pune_003",
+    "source_text": "थोडं थांब.",
+    "target_text": "थोडा वेळ थांब ना.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "pune_marathi",
+    "category": "sentence",
+    "confidence": 0.94,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:02Z"
+  },
+  {
+    "id": "std_to_mumbai_003",
+    "source_text": "मला समजले नाही.",
+    "target_text": "मुझे समझा नहीं.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "mumbai_marathi",
+    "category": "sentence",
+    "confidence": 0.91,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:03Z"
+  },
+  {
+    "id": "std_to_kolhapur_002",
+    "source_text": "तो लवकर येईल.",
+    "target_text": "तो चटकन येईल.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "kolhapur_marathi",
+    "category": "sentence",
+    "confidence": 0.94,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:04Z"
+  },
+  {
+    "id": "std_to_ahirani_004",
+    "source_text": "तुला भूक लागली का?",
+    "target_text": "तुले भूक लागली का?",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "ahirani_marathi",
+    "category": "sentence",
+    "confidence": 0.97,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:05Z"
+  },
+  {
+    "id": "std_to_malvani_003",
+    "source_text": "तो इथे येईल.",
+    "target_text": "तो हय येतय.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "malvani_marathi",
+    "category": "sentence",
+    "confidence": 0.96,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:06Z"
+  },
+  {
+    "id": "std_to_agri_003",
+    "source_text": "पावसाला सुरुवात झाली.",
+    "target_text": "पावसाला सुरुवात झाली हाय.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "agri_marathi",
+    "category": "sentence",
+    "confidence": 0.95,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:07Z"
+  },
+  {
+    "id": "std_to_warli_003",
+    "source_text": "मुलगा घरी आहे.",
+    "target_text": "पोर घरा आह.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "warli_marathi",
+    "category": "sentence",
+    "confidence": 0.89,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:08Z"
+  },
+  {
+    "id": "std_to_thanjavur_003",
+    "source_text": "आज बाजार बंद आहे.",
+    "target_text": "आज बाजार बंद आये.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "thanjavur_marathi",
+    "category": "sentence",
+    "confidence": 0.92,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:09Z"
+  },
+  {
+    "id": "std_to_koli_003",
+    "source_text": "दर्यात वारा आहे.",
+    "target_text": "दर्यात वारो हाव.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "koli_marathi",
+    "category": "sentence",
+    "confidence": 0.94,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:10Z"
+  },
+  {
+    "id": "std_to_solapuri_003",
+    "source_text": "तुम्ही कधी येणार?",
+    "target_text": "तुमी कधी येणार जी?",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "solapuri_marathi",
+    "category": "sentence",
+    "confidence": 0.95,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:11Z"
+  },
+  {
+    "id": "std_to_marathwada_003",
+    "source_text": "हे काम अवघड आहे.",
+    "target_text": "हे काम जड हाय.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "marathwada_marathi",
+    "category": "sentence",
+    "confidence": 0.96,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:12Z"
+  },
+  {
+    "id": "std_to_belgaum_003",
+    "source_text": "आम्ही उद्या भेटू.",
+    "target_text": "आमी उद्या भेटूय.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "belgaum_marathi",
+    "category": "sentence",
+    "confidence": 0.93,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:13Z"
+  },
+  {
+    "id": "std_to_dangii_003",
+    "source_text": "तो गावात राहतो.",
+    "target_text": "तो गावात राहे.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "dangii",
+    "category": "sentence",
+    "confidence": 0.88,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:14Z"
+  },
+  {
+    "id": "std_to_pawra_003",
+    "source_text": "आम्ही आता जातो.",
+    "target_text": "आमी आता जावो.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "pawra",
+    "category": "sentence",
+    "confidence": 0.89,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:15Z"
+  },
+  {
+    "id": "std_to_gondi_003",
+    "source_text": "तो घरी येतो.",
+    "target_text": "तो घार वायतोन.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "gondi_vidarbha",
+    "category": "sentence",
+    "confidence": 0.90,
+    "type": "manual",
+    "timestamp": "2025-12-06T09:00:16Z"
+  }
+]
+{
+  "dataset_continuation": {
+    "batch_id": "batch_004_final_set",
+    "total_new_entries": 130,
+    "focus": "comparative_parallel_phrases"
+  },
+  "training_data": [
+    {
+      "source_text": "तुला काय वाटते?",
+      "target_text": "तुले काय वाटे?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "comp_ahi_001"
+    },
+    {
+      "source_text": "तुला काय वाटते?",
+      "target_text": "तुका काय वाटता?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "comp_mal_001"
+    },
+    {
+      "source_text": "तुला काय वाटते?",
+      "target_text": "तुला काय वाटतंय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "comp_agr_001"
+    },
+    {
+      "source_text": "तुला काय वाटते?",
+      "target_text": "तुले काय वाटते?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "comp_nag_001"
+    },
+    {
+      "source_text": "तू तिथे जाऊ नकोस.",
+      "target_text": "तू तिठे जाऊ नको.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "comp_ahi_002"
+    },
+    {
+      "source_text": "तू तिथे जाऊ नकोस.",
+      "target_text": "तू थय जाव नको.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "comp_mal_002"
+    },
+    {
+      "source_text": "तू तिथे जाऊ नकोस.",
+      "target_text": "तू तिकडं नको जाऊ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "comp_agr_002"
+    },
+    {
+      "source_text": "तू तिथे जाऊ नकोस.",
+      "target_text": "तू तिथं नको जाऊ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "comp_nag_002"
+    },
+    {
+      "source_text": "पाऊस पडत आहे.",
+      "target_text": "पाऊस पडी राह्यना.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "comp_ahi_003"
+    },
+    {
+      "source_text": "पाऊस पडत आहे.",
+      "target_text": "पाऊस पडता हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "comp_mal_003"
+    },
+    {
+      "source_text": "पाऊस पडत आहे.",
+      "target_text": "पाऊस पडतोय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "comp_agr_003"
+    },
+    {
+      "source_text": "पाऊस पडत आहे.",
+      "target_text": "पाऊस पडून राहिला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "comp_nag_003"
+    },
+    {
+      "source_text": "माझे पोट भरले.",
+      "target_text": "मना पोट भरी गय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.96,
+      "id": "comp_ahi_004"
+    },
+    {
+      "source_text": "माझे पोट भरले.",
+      "target_text": "माझा पोट भरला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "comp_mal_004"
+    },
+    {
+      "source_text": "माझे पोट भरले.",
+      "target_text": "माझं पोट भरलं.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "comp_nag_004"
+    },
+    {
+      "source_text": "लवकर काम करा.",
+      "target_text": "लवकर काम करा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.99,
+      "id": "comp_ahi_005"
+    },
+    {
+      "source_text": "लवकर काम करा.",
+      "target_text": "बेगीन काम करा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "comp_mal_005"
+    },
+    {
+      "source_text": "लवकर काम करा.",
+      "target_text": "लवकर काम करा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "comp_agr_005"
+    },
+    {
+      "source_text": "लवकर काम करा.",
+      "target_text": "जल्दी काम करा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.97,
+      "id": "comp_nag_005"
+    },
+    {
+      "source_text": "तू हुशार आहेस.",
+      "target_text": "तू हुशार शे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "dia_ahi_036"
+    },
+    {
+      "source_text": "मला तुला काही सांगायचे आहे.",
+      "target_text": "मले तुले काही सांगान शे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.96,
+      "id": "dia_ahi_037"
+    },
+    {
+      "source_text": "मी तुला ओळखले नाही.",
+      "target_text": "मी तुले ओळखं नाही.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "dia_ahi_038"
+    },
+    {
+      "source_text": "उन्हाळा सुरू झाला.",
+      "target_text": "उन्हाळा चालू व्हयना.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.96,
+      "id": "dia_ahi_039"
+    },
+    {
+      "source_text": "आता काय करू?",
+      "target_text": "आता काय करू?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.99,
+      "id": "dia_ahi_040"
+    },
+    {
+      "source_text": "मी बाजारात चाललोय.",
+      "target_text": "मय बाजारात चाललय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "dia_mal_034"
+    },
+    {
+      "source_text": "मासा खूप मोठा आहे.",
+      "target_text": "मासो लय मोठो हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "dia_mal_035"
+    },
+    {
+      "source_text": "तू कधी परत येशील?",
+      "target_text": "तू परत कधी येशीत?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "dia_mal_036"
+    },
+    {
+      "source_text": "घरात पाणी नाही.",
+      "target_text": "घरात पाणी नाय हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "dia_mal_037"
+    },
+    {
+      "source_text": "हे माझे गाव आहे.",
+      "target_text": "हो माझो गाव हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.99,
+      "id": "dia_mal_038"
+    },
+    {
+      "source_text": "इकडे लक्ष दे.",
+      "target_text": "हिकडं ध्यान दे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "dia_agr_034"
+    },
+    {
+      "source_text": "गाडी लवकर चालव.",
+      "target_text": "गाडी लवकर चालव.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "dia_agr_035"
+    },
+    {
+      "source_text": "तू खूप चांगला आहेस.",
+      "target_text": "तू लय चांगला हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "dia_agr_036"
+    },
+    {
+      "source_text": "मला हे समजत नाही.",
+      "target_text": "मला हे समजत नाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "dia_agr_037"
+    },
+    {
+      "source_text": "जेवायला बस.",
+      "target_text": "खावाला बस.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "dia_agr_038"
+    },
+    {
+      "source_text": "मला आता जायला हवे.",
+      "target_text": "मले आता जायले पाहिजे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "dia_nag_034"
+    },
+    {
+      "source_text": "तुम्ही काय करताय?",
+      "target_text": "तुम्ही काय करून राहिले?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "dia_nag_035"
+    },
+    {
+      "source_text": "मला भूक लागली नाही.",
+      "target_text": "मले भूक नाही लागली.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "dia_nag_036"
+    },
+    {
+      "source_text": "तू खूप गप्पा मारतोस.",
+      "target_text": "तू लई गप्पा मारतो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.97,
+      "id": "dia_nag_037"
+    },
+    {
+      "source_text": "उद्या सुट्टी आहे.",
+      "target_text": "उद्या सुट्टी आहे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "dia_nag_038"
+    },
+    {
+      "source_text": "तू कसा आहेस?",
+      "target_text": "तू कसा हायस?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.97,
+      "id": "dia_bel_025"
+    },
+    {
+      "source_text": "मला तुझे नाव माहित आहे.",
+      "target_text": "मला तुझं नाव माहित हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.97,
+      "id": "dia_bel_026"
+    },
+    {
+      "source_text": "तू इथे कधी आलास?",
+      "target_text": "तू हिकडं कवा आला?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.96,
+      "id": "dia_bel_027"
+    },
+    {
+      "source_text": "हे काय चालले आहे?",
+      "target_text": "हे काय चाललंय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.98,
+      "id": "dia_bel_028"
+    },
+    {
+      "source_text": "तुम्ही जेवण केले का?",
+      "target_text": "तुम्ही जेवण केला का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.98,
+      "id": "dia_bel_029"
+    },
+    {
+      "source_text": "मला हे नको.",
+      "target_text": "मले हे नको.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.99,
+      "id": "dia_mar_027"
+    },
+    {
+      "source_text": "तू लवकर ये.",
+      "target_text": "तू जल्दी ये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "dia_mar_028"
+    },
+    {
+      "source_text": "खूप ऊन आहे.",
+      "target_text": "लय ऊन हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "dia_mar_029"
+    },
+    {
+      "source_text": "पाऊस पडत आहे.",
+      "target_text": "पाऊस पडायलाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.97,
+      "id": "dia_mar_030"
+    },
+    {
+      "source_text": "मला काम आहे.",
+      "target_text": "मले काम हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "dia_mar_031"
+    },
+    {
+      "source_text": "तू कुठे चालला आहेस?",
+      "target_text": "तुमी कही चालना?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.88,
+      "id": "dia_paw_020"
+    },
+    {
+      "source_text": "मला भूक लागली.",
+      "target_text": "मले भूक लागनी.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.89,
+      "id": "dia_paw_021"
+    },
+    {
+      "source_text": "पाणी पिऊन घे.",
+      "target_text": "पाणी पी ले.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.88,
+      "id": "dia_paw_022"
+    },
+    {
+      "source_text": "तू काय काम करतोस?",
+      "target_text": "तू काय काम करस?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.87,
+      "id": "dia_paw_023"
+    },
+    {
+      "source_text": "गावी कधी जाणार?",
+      "target_text": "गाव कही जावो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.86,
+      "id": "dia_paw_024"
+    },
+    {
+      "source_text": "मी घरी आहे.",
+      "target_text": "मी घर हाये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.89,
+      "id": "dia_dng_018"
+    },
+    {
+      "source_text": "तुला काय पाहिजे?",
+      "target_text": "तुला काय पाहिजे?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.90,
+      "id": "dia_dng_019"
+    },
+    {
+      "source_text": "तो माझा मित्र आहे.",
+      "target_text": "तो मारो मित्र हाये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.88,
+      "id": "dia_dng_020"
+    },
+    {
+      "source_text": "तू काय खाल्ले?",
+      "target_text": "तू काय खाल्ला?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.87,
+      "id": "dia_dng_021"
+    },
+    {
+      "source_text": "लवकर परत ये.",
+      "target_text": "जल्दी पाछा आव.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.86,
+      "id": "dia_dng_022"
+    },
+    {
+      "source_text": "झाड",
+      "target_text": "मारा",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.90,
+      "id": "vocab_gon_001"
+    },
+    {
+      "source_text": "घर",
+      "target_text": "लोन",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.90,
+      "id": "vocab_gon_002"
+    },
+    {
+      "source_text": "रस्ता",
+      "target_text": "सरी",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.88,
+      "id": "vocab_gon_003"
+    },
+    {
+      "source_text": "पाणी",
+      "target_text": "येर",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.92,
+      "id": "vocab_gon_004"
+    },
+    {
+      "source_text": "जेवण",
+      "target_text": "गाटो",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.92,
+      "id": "vocab_gon_005"
+    },
+    {
+      "source_text": "मुलगा",
+      "target_text": "पोर",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.95,
+      "id": "vocab_ahi_001"
+    },
+    {
+      "source_text": "मुलगी",
+      "target_text": "पोरि",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.95,
+      "id": "vocab_ahi_002"
+    },
+    {
+      "source_text": "कुठे",
+      "target_text": "कथा",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "vocab_ahi_003"
+    },
+    {
+      "source_text": "घेणे",
+      "target_text": "लेणे",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.96,
+      "id": "vocab_ahi_004"
+    },
+    {
+      "source_text": "आला",
+      "target_text": "उना",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "vocab_ahi_005"
+    },
+    {
+      "source_text": "कोठे",
+      "target_text": "खय",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "vocab_mal_001"
+    },
+    {
+      "source_text": "मुलगा",
+      "target_text": "चेडो",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "vocab_mal_002"
+    },
+    {
+      "source_text": "मुलगी",
+      "target_text": "चेडी",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "vocab_mal_003"
+    },
+    {
+      "source_text": "लवकर",
+      "target_text": "बेगीन",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.96,
+      "id": "vocab_mal_004"
+    },
+    {
+      "source_text": "नाही",
+      "target_text": "नय",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.99,
+      "id": "vocab_mal_005"
+    },
+    {
+      "source_text": "खूप",
+      "target_text": "लय",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.98,
+      "id": "vocab_kol_001"
+    },
+    {
+      "source_text": "मित्र",
+      "target_text": "गड्या",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.95,
+      "id": "vocab_kol_002"
+    },
+    {
+      "source_text": "इकडे",
+      "target_text": "हिकडं",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.97,
+      "id": "vocab_kol_003"
+    },
+    {
+      "source_text": "का",
+      "target_text": "कशापायी",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.96,
+      "id": "vocab_sol_001"
+    },
+    {
+      "source_text": "हो",
+      "target_text": "व्हय",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.97,
+      "id": "vocab_sol_002"
+    },
+    {
+      "source_text": "आहे",
+      "target_text": "हाय",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.98,
+      "id": "vocab_sol_003"
+    },
+    {
+      "source_text": "नाही",
+      "target_text": "न्हई",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.98,
+      "id": "vocab_sol_004"
+    }
+  ]
+}[
+  {
+    "id": "std_to_nagpur_004",
+    "source_text": "तो मला आवडतो.",
+    "target_text": "तो मले आवडतो.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "nagpur_marathi",
+    "category": "sentence",
+    "confidence": 0.95,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:01Z"
+  },
+  {
+    "id": "std_to_pune_004",
+    "source_text": "हे काम पूर्ण कर.",
+    "target_text": "हे काम पूर्ण कर ना.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "pune_marathi",
+    "category": "sentence",
+    "confidence": 0.94,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:02Z"
+  },
+  {
+    "id": "std_to_mumbai_004",
+    "source_text": "आज उशीर होईल.",
+    "target_text": "आज लेट होगा.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "mumbai_marathi",
+    "category": "sentence",
+    "confidence": 0.90,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:03Z"
+  },
+  {
+    "id": "std_to_kolhapur_003",
+    "source_text": "तो फार हुशार आहे.",
+    "target_text": "तो खूपच चाणाक्ष आहे.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "kolhapur_marathi",
+    "category": "sentence",
+    "confidence": 0.94,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:04Z"
+  },
+  {
+    "id": "std_to_ahirani_005",
+    "source_text": "तू उद्या येणार का?",
+    "target_text": "तू उद्या येस का?",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "ahirani_marathi",
+    "category": "sentence",
+    "confidence": 0.97,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:05Z"
+  },
+  {
+    "id": "std_to_malvani_004",
+    "source_text": "मला थोडी मदत कर.",
+    "target_text": "माका जरा मदत कर.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "malvani_marathi",
+    "category": "sentence",
+    "confidence": 0.96,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:06Z"
+  },
+  {
+    "id": "std_to_agri_004",
+    "source_text": "तो आज येणार नाही.",
+    "target_text": "तो आज येणार नाय.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "agri_marathi",
+    "category": "sentence",
+    "confidence": 0.95,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:07Z"
+  },
+  {
+    "id": "std_to_warli_004",
+    "source_text": "आम्ही शेतात काम करतो.",
+    "target_text": "आमी शेतात काम कराह.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "warli_marathi",
+    "category": "sentence",
+    "confidence": 0.89,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:08Z"
+  },
+  {
+    "id": "std_to_thanjavur_004",
+    "source_text": "तो घरी नाही.",
+    "target_text": "तो घरा नोको.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "thanjavur_marathi",
+    "category": "sentence",
+    "confidence": 0.91,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:09Z"
+  },
+  {
+    "id": "std_to_koli_004",
+    "source_text": "नावावर वारा सुटला.",
+    "target_text": "नावावर वारो सुटला हाव.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "koli_marathi",
+    "category": "sentence",
+    "confidence": 0.94,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:10Z"
+  },
+  {
+    "id": "std_to_solapuri_004",
+    "source_text": "आम्हाला मदत पाहिजे.",
+    "target_text": "आम्हाला मदत पाहिजे जी.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "solapuri_marathi",
+    "category": "sentence",
+    "confidence": 0.95,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:11Z"
+  },
+  {
+    "id": "std_to_marathwada_004",
+    "source_text": "आज खूप गरम आहे.",
+    "target_text": "आज लय गरम हाय.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "marathwada_marathi",
+    "category": "sentence",
+    "confidence": 0.96,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:12Z"
+  },
+  {
+    "id": "std_to_belgaum_004",
+    "source_text": "तो कामाला गेला.",
+    "target_text": "तो कामाला गेलोय.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "belgaum_marathi",
+    "category": "sentence",
+    "confidence": 0.93,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:13Z"
+  },
+  {
+    "id": "std_to_dangii_004",
+    "source_text": "तो इथे येतो.",
+    "target_text": "तो इठे आव.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "dangii",
+    "category": "sentence",
+    "confidence": 0.88,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:14Z"
+  },
+  {
+    "id": "std_to_pawra_004",
+    "source_text": "तुम्ही घरी जा.",
+    "target_text": "तुमी घरा जावो.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "pawra",
+    "category": "sentence",
+    "confidence": 0.89,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:15Z"
+  },
+  {
+    "id": "std_to_gondi_004",
+    "source_text": "तो पाणी आणतो.",
+    "target_text": "तो येर वायतोन.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "gondi_vidarbha",
+    "category": "sentence",
+    "confidence": 0.90,
+    "type": "manual",
+    "timestamp": "2025-12-07T08:30:16Z"
+  }
+]
+[
+  {
+    "id": "std_to_nagpur_005",
+    "source_text": "मला आज वेळ नाही.",
+    "target_text": "मले आज वेळ नाही.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "nagpur_marathi",
+    "category": "sentence",
+    "confidence": 0.95,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:01Z"
+  },
+  {
+    "id": "std_to_pune_005",
+    "source_text": "उद्या भेटू.",
+    "target_text": "उद्या भेटूया ना.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "pune_marathi",
+    "category": "sentence",
+    "confidence": 0.94,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:02Z"
+  },
+  {
+    "id": "std_to_mumbai_005",
+    "source_text": "हे मला जमणार नाही.",
+    "target_text": "ये मुझसे नहीं होगा.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "mumbai_marathi",
+    "category": "sentence",
+    "confidence": 0.90,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:03Z"
+  },
+  {
+    "id": "std_to_kolhapur_004",
+    "source_text": "तो रोज सकाळी उठतो.",
+    "target_text": "तो रोज सकाळी उठतोच.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "kolhapur_marathi",
+    "category": "sentence",
+    "confidence": 0.94,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:04Z"
+  },
+  {
+    "id": "std_to_ahirani_006",
+    "source_text": "आज खूप गरम आहे.",
+    "target_text": "आज लय गरम शे.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "ahirani_marathi",
+    "category": "sentence",
+    "confidence": 0.97,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:05Z"
+  },
+  {
+    "id": "std_to_malvani_005",
+    "source_text": "तो मला बोलावतो.",
+    "target_text": "तो माका बोलावतय.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "malvani_marathi",
+    "category": "sentence",
+    "confidence": 0.96,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:06Z"
+  },
+  {
+    "id": "std_to_agri_005",
+    "source_text": "आज शेतात काम आहे.",
+    "target_text": "आज शेतात काम हाय.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "agri_marathi",
+    "category": "sentence",
+    "confidence": 0.95,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:07Z"
+  },
+  {
+    "id": "std_to_warli_005",
+    "source_text": "तो डोंगरावर गेला.",
+    "target_text": "तो डोंगर जाताह.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "warli_marathi",
+    "category": "sentence",
+    "confidence": 0.88,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:08Z"
+  },
+  {
+    "id": "std_to_thanjavur_005",
+    "source_text": "मला हे नको आहे.",
+    "target_text": "मले हे नोको.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "thanjavur_marathi",
+    "category": "sentence",
+    "confidence": 0.91,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:09Z"
+  },
+  {
+    "id": "std_to_koli_005",
+    "source_text": "आज समुद्र शांत आहे.",
+    "target_text": "आज दर्या शांत हाव.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "koli_marathi",
+    "category": "sentence",
+    "confidence": 0.94,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:10Z"
+  },
+  {
+    "id": "std_to_solapuri_005",
+    "source_text": "आज बाजारात गर्दी आहे.",
+    "target_text": "आज बाजारात गर्दी हाय जी.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "solapuri_marathi",
+    "category": "sentence",
+    "confidence": 0.95,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:11Z"
+  },
+  {
+    "id": "std_to_marathwada_005",
+    "source_text": "मला तहान लागली आहे.",
+    "target_text": "मले तहान लागली हाय.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "marathwada_marathi",
+    "category": "sentence",
+    "confidence": 0.96,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:12Z"
+  },
+  {
+    "id": "std_to_belgaum_005",
+    "source_text": "तो आज लवकर येईल.",
+    "target_text": "तो आज लवकर येईलय.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "belgaum_marathi",
+    "category": "sentence",
+    "confidence": 0.93,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:13Z"
+  },
+  {
+    "id": "std_to_dangii_005",
+    "source_text": "आम्ही तिथे जातो.",
+    "target_text": "आमी तिठे जावो.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "dangii",
+    "category": "sentence",
+    "confidence": 0.88,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:14Z"
+  },
+  {
+    "id": "std_to_pawra_005",
+    "source_text": "ते लोक काम करतात.",
+    "target_text": "ते लोक काम करो.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "pawra",
+    "category": "sentence",
+    "confidence": 0.89,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:15Z"
+  },
+  {
+    "id": "std_to_gondi_005",
+    "source_text": "मी घरी जातो.",
+    "target_text": "नाना घार हंतोन.",
+    "source_dialect": "standard_marathi",
+    "target_dialect": "gondi_vidarbha",
+    "category": "sentence",
+    "confidence": 0.90,
+    "type": "manual",
+    "timestamp": "2025-12-08T09:15:16Z"
+  }
+]
+{
+  "dataset_continuation": {
+    "batch_id": "batch_005_idioms_domains",
+    "total_new_entries": 128,
+    "focus": "idioms_emotions_farming_context"
+  },
+  "training_data": [
+    {
+      "source_text": "जास्त शहाणपणा नको.",
+      "target_text": "जास्त शानपट्टी नको.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.98,
+      "id": "idiom_mum_001"
+    },
+    {
+      "source_text": "डोके खाऊ नकोस.",
+      "target_text": "डोकं नको खाऊ.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.99,
+      "id": "idiom_mum_002"
+    },
+    {
+      "source_text": "गप्प बस.",
+      "target_text": "चिडीचूप बस.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.97,
+      "id": "idiom_mum_003"
+    },
+    {
+      "source_text": "काय चाललंय?",
+      "target_text": "काय पब्लिक?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "mumbai_marathi",
+      "confidence": 0.95,
+      "id": "idiom_mum_004"
+    },
+    {
+      "source_text": "उगीच बडबड करू नकोस.",
+      "target_text": "उगीच वटवट नको करू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 0.98,
+      "id": "idiom_pun_001"
+    },
+    {
+      "source_text": "तुला अक्कल नाही.",
+      "target_text": "तुला अक्कल नाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 0.99,
+      "id": "idiom_pun_002"
+    },
+    {
+      "source_text": "वेळ वाया घालवू नकोस.",
+      "target_text": "टाइमपास नको करू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pune_marathi",
+      "confidence": 0.97,
+      "id": "idiom_pun_003"
+    },
+    {
+      "source_text": "अरे बापरे!",
+      "target_text": "अबब!",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.96,
+      "id": "idiom_nag_001"
+    },
+    {
+      "source_text": "काहीही बोलू नकोस.",
+      "target_text": "काही भी नको बोलू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "idiom_nag_002"
+    },
+    {
+      "source_text": "तो खूप बढाया मारतो.",
+      "target_text": "तो लई फेकून राहिला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.97,
+      "id": "idiom_nag_003"
+    },
+    {
+      "source_text": "त्रास देऊ नकोस.",
+      "target_text": "भेजा फ्राय नको करू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.95,
+      "id": "idiom_nag_004"
+    },
+    {
+      "source_text": "काय झाले?",
+      "target_text": "काय झाल रं गड्या?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.98,
+      "id": "idiom_kol_001"
+    },
+    {
+      "source_text": "तू खूप घाबरट आहेस.",
+      "target_text": "तू लय भित्रा हायस.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.98,
+      "id": "idiom_kol_002"
+    },
+    {
+      "source_text": "आता गप्प बस.",
+      "target_text": "आता गप गुमान बस.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "kolhapur_marathi",
+      "confidence": 0.99,
+      "id": "idiom_kol_003"
+    },
+    {
+      "source_text": "शेतात काम चालू आहे.",
+      "target_text": "वावर मा काम चालू शे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "farm_ahi_001"
+    },
+    {
+      "source_text": "बैलगाडी जुंपली आहे.",
+      "target_text": "बैलगाडी जुंपेल शे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.97,
+      "id": "farm_ahi_002"
+    },
+    {
+      "source_text": "कापूस वेचायला चल.",
+      "target_text": "कापूस वेचले चल.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.98,
+      "id": "farm_ahi_003"
+    },
+    {
+      "source_text": "पाऊस पडला तर पीक येईल.",
+      "target_text": "पाऊस पडा त पीक येई.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "ahirani_marathi",
+      "confidence": 0.96,
+      "id": "farm_ahi_004"
+    },
+    {
+      "source_text": "नारळ काढायचे आहेत.",
+      "target_text": "नारळ काडूक हवत.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.97,
+      "id": "farm_mal_001"
+    },
+    {
+      "source_text": "आंबा पिकला आहे.",
+      "target_text": "आंबो पिकलो हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "farm_mal_002"
+    },
+    {
+      "source_text": "भात लावणी सुरू आहे.",
+      "target_text": "भात लावणी सुरू हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.98,
+      "id": "farm_mal_003"
+    },
+    {
+      "source_text": "विहिरीत पाणी आहे.",
+      "target_text": "विहिरीत पाणी हा.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "malvani_marathi",
+      "confidence": 0.99,
+      "id": "farm_mal_004"
+    },
+    {
+      "source_text": "शेत नांगरले आहे.",
+      "target_text": "शेत नांगरलाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.97,
+      "id": "farm_agr_001"
+    },
+    {
+      "source_text": "तांदूळ खूप झाला आहे.",
+      "target_text": "तांदूळ लय झालाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "farm_agr_002"
+    },
+    {
+      "source_text": "बैल थकले आहेत.",
+      "target_text": "बैल थकलेत.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.96,
+      "id": "farm_agr_003"
+    },
+    {
+      "source_text": "उद्या जत्रा आहे.",
+      "target_text": "उद्या जत्रा हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.99,
+      "id": "cult_agr_001"
+    },
+    {
+      "source_text": "सण आनंदाने साजरा करू.",
+      "target_text": "सण आनंदान साजरा करू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "agri_marathi",
+      "confidence": 0.98,
+      "id": "cult_agr_002"
+    },
+    {
+      "source_text": "रानात वाघ आहे.",
+      "target_text": "रानात वाघ आह.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.95,
+      "id": "nature_war_001"
+    },
+    {
+      "source_text": "नदीला पूर आला आहे.",
+      "target_text": "नदीला पूर आलाह.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.96,
+      "id": "nature_war_002"
+    },
+    {
+      "source_text": "डोंगर खूप उंच आहे.",
+      "target_text": "डोंगर लय उंच आह.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.95,
+      "id": "nature_war_003"
+    },
+    {
+      "source_text": "साप दिसला.",
+      "target_text": "साप दिसला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.98,
+      "id": "nature_war_004"
+    },
+    {
+      "source_text": "झाडे तोडू नका.",
+      "target_text": "झाडं तोडू नका.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "warli_marathi",
+      "confidence": 0.97,
+      "id": "nature_war_005"
+    },
+    {
+      "source_text": "मला खूप आनंद झाला.",
+      "target_text": "मले लई आनंद झाला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "emot_nag_001"
+    },
+    {
+      "source_text": "मला रडू येत आहे.",
+      "target_text": "मले रडू येऊन राहिलं.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "emot_nag_002"
+    },
+    {
+      "source_text": "मला तुझी आठवण येते.",
+      "target_text": "मले तुझी याद येते.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.97,
+      "id": "emot_nag_003"
+    },
+    {
+      "source_text": "तू काळजी करू नकोस.",
+      "target_text": "तू चिंता नको करू.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.98,
+      "id": "emot_nag_004"
+    },
+    {
+      "source_text": "मला भीती वाटते.",
+      "target_text": "मले भीती वाटते.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "nagpur_marathi",
+      "confidence": 0.99,
+      "id": "emot_nag_005"
+    },
+    {
+      "source_text": "देव तुमचे भले करो.",
+      "target_text": "देव तुमचं भलं करो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.98,
+      "id": "cult_sol_001"
+    },
+    {
+      "source_text": "पंढरपूरला चला.",
+      "target_text": "पंढरपूरला चला.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.99,
+      "id": "cult_sol_002"
+    },
+    {
+      "source_text": "प्रसाद घ्या.",
+      "target_text": "प्रसाद घ्या.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.99,
+      "id": "cult_sol_003"
+    },
+    {
+      "source_text": "कीर्तन छान झाले.",
+      "target_text": "कीर्तन छान झालं.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.97,
+      "id": "cult_sol_004"
+    },
+    {
+      "source_text": "आजारी पडलो.",
+      "target_text": "आजारी पडलो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.98,
+      "id": "health_sol_001"
+    },
+    {
+      "source_text": "औषध घेतले का?",
+      "target_text": "औषध घेतलं का?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "solapuri_marathi",
+      "confidence": 0.98,
+      "id": "health_sol_002"
+    },
+    {
+      "source_text": "मला बरे वाटत नाही.",
+      "target_text": "मले बरं वाटत नाही.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.97,
+      "id": "health_mar_001"
+    },
+    {
+      "source_text": "ताप आला आहे.",
+      "target_text": "ताप आलाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "health_mar_002"
+    },
+    {
+      "source_text": "डोकं दुखतंय.",
+      "target_text": "डोकं दुखायलाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.98,
+      "id": "health_mar_003"
+    },
+    {
+      "source_text": "डॉक्टरांकडे चल.",
+      "target_text": "दवाखान्यात चल.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.97,
+      "id": "health_mar_004"
+    },
+    {
+      "source_text": "मी तुला सांगतो.",
+      "target_text": "मी तुले सांगतो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "marathwada_marathi",
+      "confidence": 0.99,
+      "id": "gen_mar_001"
+    },
+    {
+      "source_text": "घरात पाणी नाही.",
+      "target_text": "लोन येर हिल्ले.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "daily_gon_001"
+    },
+    {
+      "source_text": "मी बाजारात जातो.",
+      "target_text": "नाना बाजार हंतोन.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.86,
+      "id": "daily_gon_002"
+    },
+    {
+      "source_text": "लवकर ये.",
+      "target_text": "जल्दी वाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.87,
+      "id": "daily_gon_003"
+    },
+    {
+      "source_text": "बाहेर खूप ऊन आहे.",
+      "target_text": "बाहेर लई घाम आहे.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.84,
+      "id": "daily_gon_004"
+    },
+    {
+      "source_text": "तू काय करतोयस?",
+      "target_text": "निमा बती की?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "gondi_vidarbha",
+      "confidence": 0.85,
+      "id": "daily_gon_005"
+    },
+    {
+      "source_text": "तू काय म्हणतोस?",
+      "target_text": "तू काय म्हनयेस?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.96,
+      "id": "archaic_tnj_001"
+    },
+    {
+      "source_text": "मी हे काम केले.",
+      "target_text": "मिय हे काम केलो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.97,
+      "id": "archaic_tnj_002"
+    },
+    {
+      "source_text": "तू तिथे जाऊ नकोस.",
+      "target_text": "तू तिथं जाऊ नोको.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.97,
+      "id": "archaic_tnj_003"
+    },
+    {
+      "source_text": "माझे ऐक.",
+      "target_text": "मझं ऐक.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.98,
+      "id": "archaic_tnj_004"
+    },
+    {
+      "source_text": "हे खूप छान आहे.",
+      "target_text": "हे लय बेस आये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "thanjavur_marathi",
+      "confidence": 0.96,
+      "id": "archaic_tnj_005"
+    },
+    {
+      "source_text": "तू कुठे जातोयस?",
+      "target_text": "तू कही जावो?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.88,
+      "id": "daily_paw_001"
+    },
+    {
+      "source_text": "माझे नाव सांग.",
+      "target_text": "मारो नाव बोल.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.88,
+      "id": "daily_paw_002"
+    },
+    {
+      "source_text": "मी येतो.",
+      "target_text": "मी आवो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.89,
+      "id": "daily_paw_003"
+    },
+    {
+      "source_text": "चहा पी.",
+      "target_text": "चहा पी ले.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.90,
+      "id": "daily_paw_004"
+    },
+    {
+      "source_text": "तू कोण आहेस?",
+      "target_text": "तू कोण से?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "pawra",
+      "confidence": 0.89,
+      "id": "daily_paw_005"
+    },
+    {
+      "source_text": "मी तुला मदत करेन.",
+      "target_text": "मी तुला मदत करस.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.88,
+      "id": "daily_dng_001"
+    },
+    {
+      "source_text": "तू काय करतोयस?",
+      "target_text": "तू काय करस?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.89,
+      "id": "daily_dng_002"
+    },
+    {
+      "source_text": "घरी जा.",
+      "target_text": "घर जावो.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.88,
+      "id": "daily_dng_003"
+    },
+    {
+      "source_text": "हे माझे आहे.",
+      "target_text": "हे मारो हाये.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.90,
+      "id": "daily_dng_004"
+    },
+    {
+      "source_text": "कसे आहात?",
+      "target_text": "कसा हाये?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "dangii",
+      "confidence": 0.89,
+      "id": "daily_dng_005"
+    },
+    {
+      "source_text": "मासे पकडायला चल.",
+      "target_text": "मासे पकडायला चल.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.98,
+      "id": "occup_kol_001"
+    },
+    {
+      "source_text": "समुद्र खवळला आहे.",
+      "target_text": "दर्या खवळला हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.97,
+      "id": "occup_kol_002"
+    },
+    {
+      "source_text": "जाळे नीट कर.",
+      "target_text": "जाळ नीट कर.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.97,
+      "id": "occup_kol_003"
+    },
+    {
+      "source_text": "होडी किनाऱ्यावर आहे.",
+      "target_text": "बोट काठावर हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.98,
+      "id": "occup_kol_004"
+    },
+    {
+      "source_text": "आज बाजार आहे.",
+      "target_text": "आज बाजार हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "koli_fisherfolk",
+      "confidence": 0.99,
+      "id": "occup_kol_005"
+    },
+    {
+      "source_text": "तू काय करतोयस?",
+      "target_text": "तू काय करतुयास?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.96,
+      "id": "daily_bel_001"
+    },
+    {
+      "source_text": "मी येतोय.",
+      "target_text": "मी येतुया.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.97,
+      "id": "daily_bel_002"
+    },
+    {
+      "source_text": "हे माझे घर आहे.",
+      "target_text": "हे माझं घर हाय.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.98,
+      "id": "daily_bel_003"
+    },
+    {
+      "source_text": "तू जेवलास का?",
+      "target_text": "तू जेवलास काय?",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.98,
+      "id": "daily_bel_004"
+    },
+    {
+      "source_text": "लवकर आवर.",
+      "target_text": "लवकर आवर.",
+      "source_dialect": "standard_marathi",
+      "target_dialect": "belgaum_marathi",
+      "confidence": 0.99,
+      "id": "daily_bel_005"
+    }
+  ]
+}
