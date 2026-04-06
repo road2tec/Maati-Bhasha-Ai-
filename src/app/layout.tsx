@@ -7,7 +7,7 @@ import { AuthProvider } from '@/contexts/auth-context';
 import Chatbot from '@/components/chatbot';
 
 export const metadata: Metadata = {
-  title: 'MaatiBhasha AI',
+  title: 'Marathi language translator',
   description: 'Advanced AI-powered Marathi dialect translation system.',
 };
 

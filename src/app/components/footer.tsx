@@ -29,7 +29,7 @@ export default function Footer() {
                 <BotMessageSquare className="h-6 w-6 text-primary-foreground" />
               </div>
               <h1 className="text-2xl font-bold tracking-tight">
-                MaatiBhasha AI
+                Marathi language translator
               </h1>
             </Link>
             <p className="max-w-md text-sidebar-foreground/70">
@@ -73,7 +73,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-sidebar-border flex flex-col sm:flex-row justify-between items-center">
            <p className="text-sm text-sidebar-foreground/50">
-            &copy; {currentYear} MaatiBhasha AI. All rights reserved.
+            &copy; {currentYear} Marathi language translator. All rights reserved.
           </p>
           <div className="flex items-center gap-4 mt-4 sm:mt-0">
              <Link href="#" aria-label="Twitter">

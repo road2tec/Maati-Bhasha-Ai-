@@ -29,7 +29,7 @@ export default function Header() {
             <BotMessageSquare className="h-6 w-6 text-primary-foreground" />
           </div>
           <h1 className="text-xl font-bold tracking-tight font-headline text-foreground">
-            MaatiBhasha AI
+            Marathi language translator
           </h1>
         </Link>
         <nav className="hidden md:flex items-center gap-1">

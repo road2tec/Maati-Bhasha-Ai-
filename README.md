@@ -1,4 +1,4 @@
-# MaatiBhasha AI
+# Marathi language translator
 
 A Next.js app that provides AI-powered Marathi dialect translation. The project was originally implemented with Firebase and has been migrated to use MongoDB Atlas for authentication and user management.
 

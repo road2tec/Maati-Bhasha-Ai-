@@ -114,7 +114,7 @@ export default function Home() {
     <div className="w-full flex flex-col items-center">
       {/* Hero Section */}
       <section className="w-full text-center py-20 lg:py-32">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground">MaatiBhasha AI</h1>
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground">Marathi language translator</h1>
         <p className="text-2xl md:text-3xl font-medium text-primary mt-4">मराठी भाषा बुद्धिमत्ता प्रणाली</p>
         <p className="max-w-3xl mx-auto mt-6 text-lg text-muted-foreground">
           Advanced AI-powered Marathi dialect translation system that preserves the cultural richness of Maharashtra's diverse linguistic heritage.
@@ -133,7 +133,7 @@ export default function Home() {
       <section className="w-full max-w-7xl mx-auto py-20 px-4">
         <Card className="bg-card/50 border-2 border-border rounded-2xl shadow-xl">
           <CardHeader className="pt-12">
-            <h2 className="text-4xl font-bold text-center">Why Choose MaatiBhasha AI?</h2>
+            <h2 className="text-4xl font-bold text-center">Why Choose Marathi language translator?</h2>
           </CardHeader>
           <CardContent className="grid md:grid-cols-3 gap-8 py-12">
             {featureCards.map((card) => (
